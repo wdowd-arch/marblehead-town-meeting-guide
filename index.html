@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 Town Meeting voter guide — The Marblehead Independent</title>
+  <meta name="description" content="A $122.7 million budget, a structural deficit and 40 articles that will shape Marblehead's next year. The complete voter guide to the 2026 Annual Town Meeting.">
+  <meta property="og:title" content="2026 Town Meeting voter guide — The Marblehead Independent">
+  <meta property="og:description" content="A $122.7 million budget, a structural deficit and 40 articles that will shape Marblehead's next year.">
+  <meta property="og:type" content="article">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <style>
+    /* === BASE === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { background: #FDF9F4; scroll-behavior: smooth; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: #FDF9F4;
+      color: #1E1F21;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* === MASTHEAD === */
+    .masthead {
+      background: #1a1a2e;
+      border-bottom: 4px solid #C2261D;
+      padding: 20px 24px;
+      text-align: center;
+    }
+    .masthead-name {
+      font-family: Georgia, serif;
+      font-size: clamp(20px, 5vw, 32px);
+      font-weight: 700;
+      color: #FDF9F4;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .masthead-tagline {
+      font-size: 13px;
+      color: #9ca3af;
+      letter-spacing: 0.5px;
+    }
+
+    /* === ARTICLE === */
+    .article {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+    .headline {
+      font-size: clamp(26px, 5vw, 38px);
+      font-weight: 700;
+      line-height: 1.2;
+      color: #1a1a2e;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+    .deck {
+      font-size: clamp(16px, 3vw, 19px);
+      color: #4A4A4A;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    /* === BLOCKQUOTE === */
+    blockquote {
+      background: #F0EDE8;
+      border-left: 4px solid #C2261D;
+      padding: 16px 20px;
+      margin: 24px 0;
+      border-radius: 4px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    blockquote strong { font-weight: 700; }
+
+    /* === SECTION HEADERS === */
+    .section-header {
+      background: #1a1a2e;
+      border-top: 4px solid #C2261D;
+      padding: 18px 20px 20px;
+      margin: 40px -20px 28px;
+    }
+    .section-header h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(18px, 4.6vw, 24px);
+      font-weight: 700;
+      color: #FDF9F4;
+      letter-spacing: -0.2px;
+      line-height: 1.25;
+    }
+    .section-header-alt {
+      background: #171738;
+      border-top: 6px solid #C2261D;
+      padding: 26px 28px 28px;
+      margin: 40px -20px 28px;
+    }
+    .section-header-alt h2 {
+      font-size: clamp(22px, 5vw, 30px);
+    }
+    .header-rule {
+      width: 46px;
+      height: 2px;
+      background: #C2261D;
+      margin-top: 10px;
+    }
+
+    /* === TYPOGRAPHY === */
+    .article h3 {
+      font-size: clamp(19px, 4vw, 24px);
+      font-weight: 700;
+      color: #1a1a2e;
+      margin: 32px 0 12px;
+      line-height: 1.3;
+      letter-spacing: -0.3px;
+    }
+    .article p {
+      font-size: 17px;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .article a {
+      color: #375E97;
+      text-decoration: underline;
+      text-decoration-color: rgba(55,94,151,0.3);
+      text-underline-offset: 2px;
+      transition: text-decoration-color 0.15s;
+    }
+    .article a:hover { text-decoration-color: #375E97; }
+
+    .source-cite {
+      font-size: 15px;
+      font-style: italic;
+      color: #6b7280;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .source-cite a { color: #6b7280; }
+
+    /* === CHART WRAPPERS === */
+    .chart-wrapper {
+      margin: 28px 0;
+      padding: 32px 20px;
+      background: #FDF9F4;
+      border: 1px solid #D8D3CC;
+      border-radius: 8px;
+    }
+    .chart-wrapper h2 { font-size: 24px; font-weight: 700; line-height: 1.3; margin-bottom: 6px; color: #1E1F21; }
+    .chart-wrapper h3 { font-size: 20px; font-weight: 700; margin-bottom: 16px; color: #1E1F21; }
+    .chart-wrapper .subtitle { font-size: 15px; color: #4A4A4A; margin-bottom: 28px; font-style: italic; }
+    .chart-wrapper .chart-box { width: 100%; height: 400px; }
+    .chart-wrapper .chart-wrap { display: flex; flex-wrap: wrap; gap: 28px; align-items: center; }
+    .chart-wrapper .chart-wrap > .chart-box { flex: 0 0 340px; height: 340px; position: relative; }
+    .chart-wrapper .legend { flex: 1; min-width: 240px; }
+    .chart-wrapper .legend-item { display: flex; align-items: baseline; gap: 10px; padding: 6px 10px; border-radius: 4px; cursor: pointer; transition: background 0.15s; }
+    .chart-wrapper .legend-item:hover { background: #F0EDE8; }
+    .chart-wrapper .swatch { display: inline-block; width: 12px; height: 12px; border-radius: 2px; flex-shrink: 0; margin-top: 3px; }
+    .chart-wrapper .legend-label { font-size: 15px; color: #1E1F21; }
+    .chart-wrapper .legend-label strong { font-weight: 700; }
+    .chart-wrapper .legend-label .pct { color: #5A5A5A; }
+    .chart-wrapper .detail-box { margin-top: 20px; padding: 14px 18px; background: #F0EDE8; border-radius: 6px; border-left: 4px solid #999; font-size: 15px; line-height: 1.6; min-height: 48px; }
+    .chart-wrapper .source { font-size: 12px; color: #6B6B6B; margin-top: 24px; line-height: 1.6; }
+    .chart-wrapper .top-rule { border-top: 3px solid #1a1a2e; padding-top: 4px; }
+    .chart-wrapper .top-rule-inner { border-top: 0.75px solid #1a1a2e; padding-top: 16px; }
+    .chart-wrapper .eras { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+    .chart-wrapper .era-tag { font-size: 12px; padding: 4px 12px; border-radius: 12px; color: #1a1a2e; white-space: nowrap; font-weight: 600; }
+    .chart-wrapper .callout { margin-top: 20px; padding: 14px 18px; border-radius: 6px; border-left: 4px solid; font-size: 15px; line-height: 1.6; }
+    .chart-wrapper .callout strong { color: #1E1F21; }
+    .chart-wrapper .legend-row { display: flex; gap: 20px; justify-content: center; margin-top: 12px; margin-bottom: 28px; }
+    .chart-wrapper .legend-dot { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+    .chart-wrapper .legend-dot span { width: 14px; height: 14px; border-radius: 2px; display: inline-block; }
+    .chart-wrapper .divider { border-top: 1px solid #DDD8D0; padding-top: 24px; margin-top: 8px; }
+    .chart-wrapper .timeline { display: flex; flex-direction: column; gap: 14px; }
+    .chart-wrapper .tl-item { display: flex; gap: 14px; font-size: 15px; line-height: 1.6; }
+    .chart-wrapper .tl-date { font-weight: 700; color: #375E97; white-space: nowrap; min-width: 130px; }
+
+    /* === VIDEO === */
+    .video-embed {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      margin: 20px 0;
+    }
+    .video-embed iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+
+    /* === WIDGET STYLES === */
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html {
+      background: #FDF9F4;
+      padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    }
+    body { background: #FDF9F4; }
+    .mi-trash *, .mi-trash *::before, .mi-trash *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    .mi-trash {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: #FDF9F4;
+      border: 1px solid #D8D3CC;
+      border-radius: 10px;
+      overflow: hidden;
+      max-width: 720px;
+      margin: 24px auto;
+    }
+    .mi-trash .top-banner {
+      background: #2D6A2E;
+      padding: 14px 20px;
+      padding-left: max(20px, env(safe-area-inset-left));
+      padding-right: max(20px, env(safe-area-inset-right));
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-align: center;
+    }
+    .mi-trash .body {
+      padding: 24px 22px 28px;
+      padding-left: max(22px, env(safe-area-inset-left));
+      padding-right: max(22px, env(safe-area-inset-right));
+    }
+    .mi-trash .note {
+      font-size: 16px;
+      color: #5C5D5F;
+      margin-bottom: 22px;
+      line-height: 1.6;
+    }
+    .mi-trash .step {
+      position: relative;
+      padding-left: 32px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #1E1F21;
+    }
+    .mi-trash .step:last-child { margin-bottom: 0; }
+    .mi-trash .dot {
+      position: absolute;
+      left: 0;
+      top: 2px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+      background: #2D6A2E;
+    }
+    .mi-trash .line {
+      position: absolute;
+      left: 10px;
+      top: 24px;
+      width: 2px;
+      bottom: -18px;
+      background: #2D6A2E;
+      opacity: 0.25;
+    }
+    .mi-trash .step-title {
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.3px;
+      margin-bottom: 2px;
+      color: #2D6A2E;
+    }
+    .mi-trash .step-text {
+      color: #5C5D5F;
+      font-size: 16px;
+    }
+    .mi-trash .toggle-card {
+      background: #fff;
+      border: 1px solid #D8D3CC;
+      border-radius: 6px;
+      padding: 16px 18px;
+      margin: 18px 0 6px 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+      transition: all 0.2s;
+    }
+    .mi-trash .toggle-card.on {
+      border-color: #2D6A2E;
+      background: #E9F2E9;
+    }
+    .mi-trash .toggle-check {
+      width: 24px;
+      height: 24px;
+      border-radius: 3px;
+      border: 2px solid #D8D3CC;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.15s;
+    }
+    .mi-trash .toggle-card.on .toggle-check {
+      border-color: #2D6A2E;
+      background: #2D6A2E;
+    }
+    .mi-trash .toggle-check svg { display: none; }
+    .mi-trash .toggle-card.on .toggle-check svg { display: block; }
+    .mi-trash .toggle-label {
+      font-size: 16px;
+      color: #1E1F21;
+      flex: 1;
+    }
+    .mi-trash .toggle-card.on .toggle-label { font-weight: 700; }
+    .mi-trash .toggle-amt {
+      font-size: 18px;
+      font-weight: 700;
+      color: #5C5D5F;
+      white-space: nowrap;
+      transition: color 0.2s;
+    }
+    .mi-trash .toggle-card.on .toggle-amt { color: #2D6A2E; }
+    .mi-trash .result-box {
+      margin-top: 20px;
+      padding: 16px;
+      border-radius: 6px;
+      text-align: center;
+      background: #fff;
+      border: 1px solid #D8D3CC;
+      transition: all 0.2s;
+    }
+    .mi-trash .result-box.on {
+      background: #E9F2E9;
+      border-color: #2D6A2E;
+    }
+    .mi-trash .result-sub {
+      font-size: 14px;
+      color: #5C5D5F;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .mi-trash .result-num {
+      font-size: 34px;
+      font-weight: 700;
+      color: #5C5D5F;
+      transition: color 0.2s;
+    }
+    .mi-trash .result-box.on .result-num { color: #2D6A2E; }
+    .mi-trash .result-rule {
+      font-size: 14px;
+      font-weight: 700;
+      margin-top: 4px;
+      color: #2D6A2E;
+      line-height: 1.5;
+    }
+    .mi-trash .bottom-bar {
+      background: #2D6A2E;
+      padding: 12px 20px;
+      padding-left: max(20px, env(safe-area-inset-left));
+      padding-right: max(20px, env(safe-area-inset-right));
+      text-align: center;
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.3px;
+      line-height: 1.5;
+    }
+    .mi-trash .source-note {
+      font-size: 13px;
+      color: #8A8A8A;
+      text-align: center;
+      margin-top: 12px;
+      font-style: italic;
+      line-height: 1.5;
+    }
+    @media (max-width: 600px) {
+      .mi-trash .top-banner { font-size: 14px; padding: 12px 16px; }
+      .mi-trash .body { padding: 18px 16px 22px; }
+      .mi-trash .toggle-card { margin-left: 0; padding: 14px 14px; }
+      .mi-trash .result-num { font-size: 28px; }
+      .mi-trash .note { font-size: 15px; }
+      .mi-trash .step-text { font-size: 15px; }
+      .mi-trash .toggle-label { font-size: 15px; }
+    }
+    @media (max-height: 500px) and (orientation: landscape) {
+      .mi-trash .body { padding: 12px 16px 16px; }
+      .mi-trash .step { margin-bottom: 12px; }
+      .mi-trash .toggle-card { margin: 10px 0 4px 32px; padding: 12px 14px; }
+      .mi-trash .result-box { margin-top: 14px; padding: 10px; }
+      .mi-trash .result-num { font-size: 24px; }
+      .mi-trash .note { margin-bottom: 14px; font-size: 14px; }
+    }
+  
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html {
+      background: #FDF9F4;
+      padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    }
+    body { background: #FDF9F4; }
+    .mi-tier *, .mi-tier *::before, .mi-tier *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    .mi-tier {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: #FDF9F4;
+      border: 1px solid #D8D3CC;
+      border-radius: 10px;
+      overflow: hidden;
+      max-width: 720px;
+      margin: 24px auto;
+    }
+    .mi-tier .top-banner {
+      background: #2D6A2E;
+      padding: 14px 20px;
+      padding-left: max(20px, env(safe-area-inset-left));
+      padding-right: max(20px, env(safe-area-inset-right));
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-align: center;
+    }
+    .mi-tier .body {
+      padding: 24px 22px 28px;
+      padding-left: max(18px, env(safe-area-inset-left));
+      padding-right: max(18px, env(safe-area-inset-right));
+    }
+    .mi-tier .note {
+      font-size: 16px;
+      color: #5C5D5F;
+      margin-bottom: 22px;
+      line-height: 1.6;
+    }
+    .mi-tier .step {
+      position: relative;
+      padding-left: 32px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #1E1F21;
+    }
+    .mi-tier .step:last-child { margin-bottom: 0; }
+    .mi-tier .dot {
+      position: absolute;
+      left: 0;
+      top: 2px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+      background: #2D6A2E;
+    }
+    .mi-tier .line {
+      position: absolute;
+      left: 10px;
+      top: 24px;
+      width: 2px;
+      bottom: -18px;
+      background: #2D6A2E;
+      opacity: 0.25;
+    }
+    .mi-tier .step-title {
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.3px;
+      margin-bottom: 2px;
+      color: #2D6A2E;
+    }
+    .mi-tier .step-text {
+      color: #5C5D5F;
+      font-size: 16px;
+    }
+    .mi-tier .tiers-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      margin: 16px 0 6px 28px;
+    }
+    .mi-tier .tier-card {
+      background: #fff;
+      border: 1px solid #D8D3CC;
+      border-radius: 6px;
+      padding: 10px 10px;
+      text-align: center;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+      transition: all 0.2s;
+    }
+    .mi-tier .tier-card.on {
+      border-color: #2D6A2E;
+      background: #E9F2E9;
+    }
+    .mi-tier .tier-amt {
+      font-size: 26px;
+      font-weight: 700;
+      color: #1E1F21;
+      transition: color 0.2s;
+    }
+    .mi-tier .tier-card.on .tier-amt { color: #2D6A2E; }
+    .mi-tier .tier-name {
+      font-size: 13px;
+      color: #5C5D5F;
+      margin-top: 2px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      transition: color 0.2s;
+    }
+    .mi-tier .tier-card.on .tier-name { color: #2D6A2E; }
+    .mi-tier .tier-check {
+      width: 20px;
+      height: 20px;
+      border-radius: 3px;
+      border: 2px solid #D8D3CC;
+      margin: 6px auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s;
+    }
+    .mi-tier .tier-card.on .tier-check {
+      border-color: #2D6A2E;
+      background: #2D6A2E;
+    }
+    .mi-tier .tier-check svg { display: none; }
+    .mi-tier .tier-card.on .tier-check svg { display: block; }
+    .mi-tier .result-box {
+      margin-top: 20px;
+      padding: 14px;
+      border-radius: 6px;
+      text-align: center;
+      background: #fff;
+      border: 1px solid #D8D3CC;
+      transition: all 0.2s;
+    }
+    .mi-tier .result-box.on {
+      background: #E9F2E9;
+      border-color: #2D6A2E;
+    }
+    .mi-tier .result-sub {
+      font-size: 14px;
+      color: #5C5D5F;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .mi-tier .result-num {
+      font-size: 34px;
+      font-weight: 700;
+      color: #5C5D5F;
+      transition: color 0.2s;
+    }
+    .mi-tier .result-box.on .result-num { color: #2D6A2E; }
+    .mi-tier .result-rule {
+      font-size: 14px;
+      font-weight: 700;
+      margin-top: 4px;
+      color: #2D6A2E;
+    }
+    .mi-tier .bottom-bar {
+      background: #2D6A2E;
+      padding: 12px 20px;
+      padding-left: max(20px, env(safe-area-inset-left));
+      padding-right: max(20px, env(safe-area-inset-right));
+      text-align: center;
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.3px;
+      line-height: 1.5;
+    }
+    .mi-tier .order-note {
+      font-size: 13px;
+      color: #8A8A8A;
+      text-align: center;
+      margin-top: 12px;
+      font-style: italic;
+      line-height: 1.5;
+    }
+    @media (max-width: 600px) {
+      .mi-tier .top-banner { font-size: 14px; padding: 12px 16px; }
+      .mi-tier .body { padding: 18px 16px 22px; }
+      .mi-tier .tiers-grid { gap: 6px; margin-left: 0; }
+      .mi-tier .tier-amt { font-size: 22px; }
+      .mi-tier .tier-name { font-size: 12px; }
+      .mi-tier .result-num { font-size: 28px; }
+      .mi-tier .note { font-size: 15px; }
+      .mi-tier .step-text { font-size: 15px; }
+    }
+    @media (max-height: 500px) and (orientation: landscape) {
+      .mi-tier .body { padding: 12px 16px 16px; }
+      .mi-tier .step { margin-bottom: 12px; }
+      .mi-tier .tiers-grid { margin: 10px 0 4px 32px; gap: 8px; }
+      .mi-tier .tier-card { padding: 8px 8px; }
+      .mi-tier .tier-amt { font-size: 20px; }
+      .mi-tier .result-box { margin-top: 14px; padding: 10px; }
+      .mi-tier .result-num { font-size: 24px; }
+      .mi-tier .note { margin-bottom: 14px; font-size: 14px; }
+    }
+  
+
+    /* === RESPONSIVE === */
+    @media (max-width: 600px) {
+      .article { padding: 20px 16px 40px; }
+      .section-header, .section-header-alt { margin: 32px -16px 20px; }
+      .chart-wrapper { padding: 20px 16px; }
+      .chart-wrapper .tl-item { flex-direction: column; gap: 4px; }
+      .chart-wrapper .tl-date { min-width: auto; }
+    }
+
+    /* === FOOTER === */
+    .site-footer {
+      background: #1a1a2e;
+      padding: 28px 24px;
+      text-align: center;
+      color: #9ca3af;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .site-footer a { color: #FDF9F4; text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="masthead-name">The Marblehead Independent's 2026 Town Meeting Guide</div>
+    <div class="masthead-tagline">Government &amp; community news</div>
+  </header>
+
+  <article class="article">
+    <h1 class="headline">A $122.7 million budget, a structural deficit and 40 articles that will shape Marblehead&rsquo;s next year</h1>
+
+    <p>A $122.7 million budget, a structural deficit and 40 articles that will shape Marblehead’s next year</p>
+    <p>The 2026 Annual Town Meeting begins at 7 p.m. Monday, May 4, at the Marblehead High School Field House. Voters will decide whether to close a roughly $7.7 million budget gap through an override, a new trash fee or deeper cuts — and whether to approve MBTA zoning on a fourth try. Here is how to understand what is on the warrant before you walk into the room.</p>
+    <blockquote><strong>When: </strong>Monday, May 4, 2026, 7 p.m. <br><strong>Where: </strong>Marblehead High School Field House <br><strong>Articles on the warrant: </strong>40 <br><strong>ADA accommodations: </strong>Contact the Select Board office at 781-631-0000 by April 17</blockquote>
+    <div class="section-header"><h2>Five things to know before you sit down</h2><div class="header-rule"></div></div>
+    <h3>1. The budget is $122.76 million, but the debate is about a $7.7 million gap</h3>
+    <p>Marblehead projects roughly $96.5 million in net available revenue against an operating budget request of about $104.2 million. The difference — roughly $7.7 million — is the structural deficit that has dominated every board meeting since January. Schools absorbed about $3.2 million in cuts, a benefit-share adjustment trimmed an additional $100,000 and the proposed trash fee and February adjustments shaved another $2.6 million, but roughly $1.8 million remains unresolved heading into Town Meeting.</p>
+    <p class="source-cite"><em>Source: </em><a href="https://www.marbleheadindependent.com/marblehead-officials-put-structure-around-the-fy2027-budget-season/" target="_blank"><em>Marblehead officials put structure around the FY2027 budget season</em></a></p>
+    <h3>2. The Select Board voted 4-1 to pursue a three-tier override plus a standalone trash question</h3>
+    <p>On March 25, the board locked in a cumulative three-tier structure for the service-funding override. On April 8, Town Administrator Thatcher Kezer and Finance Director Aleesha Benjamin presented the specific dollar amounts. Tier 1 (“Partial Restore,” $9 million over three years) would bring back the most critical positions cut from the balanced budget, including the school resource officer, DPW staffing, library funding to its accreditation threshold, the community development director and Council on Aging staff. Tier 2 (“Stabilize &amp; Build,” $12 million) adds a second police officer, two firefighters, an IT director, budget analyst, remaining library staff and a $450,000 public buildings maintenance division. Tier 3 (“Invest &amp; Improve,” $15 million) layers on two more police officers, four additional firefighters, a grant writer, $1 million in recurring capital, $60,000 for psychological counseling and roughly $500,000 in school capital. The highest tier that passes by majority vote sets the permanent levy increase. On the school side, none of the tiers restore funding in FY27; Tier 1 covers cost-of-living increases and $1.5 million in special education out-of-district tuition in FY28 and FY29, Tier 2 adds technology lease funding and eliminates the full-day kindergarten fee, and Tier 3 adds curriculum development, a special education program for students ages 18-22 and $500,000 in school building capital. The Select Board is expected to vote April 22 on placing the questions on the June 9 ballot.</p>
+    <p>A separate standalone ballot question would give voters the choice of funding curbside trash collection through the property tax levy — a $2,298,575 override — instead of a per-household fee of roughly $262. Moses Grader cast the lone dissent, favoring a menu-style approach; the majority argued that fixed-cost drivers like health insurance and pensions cut across the entire budget and cannot be separated.</p>
+    <!-- TRASH OVERRIDE WIDGET -->
+<div class="mi-trash" id="mi-trash">
+  <div class="top-banner">TRASH OVERRIDE &mdash; replace the fee with a tax levy</div>
+  <div class="body">
+    <p class="note">This is a separate ballot question from the three-tier override. It would shift curbside trash and recycling costs from a per-household fee into the property tax levy. Like all four override questions, it requires only a simple majority &mdash; more yes votes than no votes &mdash; to pass.</p>
+
+    <div class="step">
+      <div class="dot">1</div>
+      <div class="line"></div>
+      <div class="step-title">NOW</div>
+      <div class="step-text">Residents pay a separate ~$262 annual fee for curbside trash and recycling collection</div>
+    </div>
+    <div class="step">
+      <div class="dot">2</div>
+      <div class="line"></div>
+      <div class="step-title">VOTE</div>
+      <div class="step-text">A single yes-or-no question: Should the town fund trash and recycling through the tax levy instead?</div>
+    </div>
+    <div class="step">
+      <div class="dot">3</div>
+      <div class="step-title">IF IT PASSES</div>
+      <div class="step-text">The per-household fee goes away. The $2,298,575 cost is folded into property taxes, spread by assessed value</div>
+    </div>
+
+    <div class="toggle-card" id="mi-trash-card" onclick="miTrashTap(this)">
+      <div class="toggle-check"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 7L6 10L11 4" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div>
+      <div class="toggle-label">Q2: Fund curbside trash and recycling via tax levy</div>
+      <div class="toggle-amt">$2.3M</div>
+    </div>
+
+    <div class="result-box" id="mi-trash-result">
+      <div class="result-sub">LEVY INCREASE</div>
+      <div class="result-num" id="mi-trash-total">$0</div>
+      <div class="result-rule" id="mi-trash-rule">&#x267B; Tap above to toggle</div>
+    </div>
+
+    <div class="source-note">Override amount: $2,298,575. A simple majority passes it. Source: April 8 override presentation.</div>
+  </div>
+  <div class="bottom-bar">&#x267B; Voted separately from the three-tier override</div>
+</div>
+    <p>The School Committee voted on March 27 to join the override effort and on April 9 voted 4-0 to approve its own three-tier school override request: Tier 1 at $6.2 million, Tier 2 at $7.2 million and Tier 3 at $8.5 million over three years. The committee also voted 4-0 to approve a draft memorandum of understanding with the Select Board that locks in a 62/38 revenue split between schools and town, commits to no new general override until at least FY30, and establishes quarterly fiscal reporting. Town Meeting must first authorize any override before it reaches the June 9 ballot.</p>
+    <!-- TIERED OVERRIDE WIDGET -->
+<div class="mi-tier" id="mi-tier">
+  <div class="top-banner">TIERED OVERRIDE &mdash; how it works</div>
+  <div class="body">
+    <p class="note">The June 9 ballot will have three override questions at $9 million, $12 million and $15 million. Each one passes with a simple majority. Only the highest one that passes counts.</p>
+
+    <div class="step">
+      <div class="dot">1</div>
+      <div class="line"></div>
+      <div class="step-title">THREE QUESTIONS</div>
+      <div class="step-text">Each tier is a different funding level for town and school services</div>
+    </div>
+    <div class="step">
+      <div class="dot">2</div>
+      <div class="line"></div>
+      <div class="step-title">VOTE YES OR NO</div>
+      <div class="step-text">You can approve all three, two, one or none</div>
+    </div>
+    <div class="step">
+      <div class="dot">3</div>
+      <div class="line"></div>
+      <div class="step-title">SIMPLE MAJORITY</div>
+      <div class="step-text">Each tier passes if it gets more yes votes than no votes</div>
+    </div>
+    <div class="step">
+      <div class="dot">4</div>
+      <div class="step-title">HIGHEST WINS</div>
+      <div class="step-text">Only the <strong>highest passing tier</strong> takes effect &mdash; they do not add together</div>
+    </div>
+
+    <div class="tiers-grid" id="mi-tier-grid">
+      <div class="tier-card" data-tier="15" onclick="miTierTap(this)">
+        <div class="tier-amt">$15M</div>
+        <div class="tier-name">INVEST</div>
+        <div class="tier-check"><svg width="10" height="10" viewBox="0 0 14 14"><path d="M3 7L6 10L11 4" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div>
+      </div>
+      <div class="tier-card" data-tier="12" onclick="miTierTap(this)">
+        <div class="tier-amt">$12M</div>
+        <div class="tier-name">STABILIZE</div>
+        <div class="tier-check"><svg width="10" height="10" viewBox="0 0 14 14"><path d="M3 7L6 10L11 4" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div>
+      </div>
+      <div class="tier-card" data-tier="9" onclick="miTierTap(this)">
+        <div class="tier-amt">$9M</div>
+        <div class="tier-name">RESTORE</div>
+        <div class="tier-check"><svg width="10" height="10" viewBox="0 0 14 14"><path d="M3 7L6 10L11 4" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div>
+      </div>
+    </div>
+
+    <div class="result-box" id="mi-tier-result">
+      <div class="result-sub">LEVY INCREASE</div>
+      <div class="result-num" id="mi-tier-total">$0</div>
+      <div class="result-rule" id="mi-tier-rule">&#9650; Tap the tiers above to see how it works</div>
+    </div>
+
+    <div class="order-note">The order of the three tiers on the ballot has not yet been set. Tax estimates based on avg. single-family assessed value of $1,291,507. Source: April 8 override presentation.</div>
+  </div>
+  <div class="bottom-bar">&#9650; Only the highest passing tier counts</div>
+</div>
+    <p class="source-cite"><em>Sources: </em><a href="https://www.marbleheadindependent.com/select-board-locks-in-three-tier-override-structure-votes-to-unite-town-and-school-ask/" target="_blank"><em>Select Board locks in three-tier override structure</em></a> · <a href="https://www.marbleheadindependent.com/ask-the-independent-menu-or-tiered-how-override-ballot-questions-work/" target="_blank"><em>Menu or tiered? How override ballot questions work</em></a> · <a href="https://www.marbleheadindependent.com/school-committee-oks-1-5m-in-cuts-turns-to-override-push/" target="_blank"><em>School Committee OKs $1.5M in cuts, turns to override push</em></a> · <a href="https://www.marbleheadindependent.com/marblehead-officials-map-out-possible-282-trash-fee-if-override-fails/" target="_blank"><em>Officials map out possible $262 trash fee</em></a></p>
+    <h3>3. MBTA zoning is back — for the fourth time in three years</h3>
+    <p>Article 4 asks voters to approve a two-subdistrict multifamily overlay to comply with the MBTA Communities Act Section 3A. The plan covers Broughton Road and Tedesco Country Club. The attorney general sued Marblehead in January for noncompliance, and the town has already been shut out of nearly $4 million in state grants.</p>
+    <p class="source-cite"><em>Source: </em><a href="https://www.marbleheadindependent.com/40-article-warrant-puts-mbta-zoning-before-marblehead-voters-for-fourth-time/" target="_blank"><em>40-article warrant puts MBTA zoning before Marblehead voters for fourth time</em></a></p>
+    <h3>4. Four citizen petitions challenge the structure of town government</h3>
+    <p>William Kuker sponsored Articles 37 through 39, seeking to limit municipal employment contracts to one year, restore one-year Select Board terms and repeal the Department of Planning and Community Development. A separate petition by Kate Borten and Lynn Nadeau (Article 40) would pass a resolution affirming the town’s commitment to the Declaration of Independence and the Constitution.</p>
+    <p class="source-cite"><em>Source: </em><a href="https://www.marbleheadindependent.com/four-citizen-petitions-for-2026-annual-town-meeting-submited/" target="_blank"><em>Four citizen petitions for 2026 Annual Town Meeting submitted</em></a></p>
+    <h3>5. The Public Works Committee has become a political football</h3>
+    <p>Two competing articles have turned a 1970-era advisory panel into one of the warrant’s most contentious fights. Article 34, sponsored by the Select Board at Town Administrator Thatcher Kezer’s request, would dissolve the Public Works Committee outright. Kezer framed it in blunt organizational terms: “You either have a town administrator form of government or you have a committee of department heads form of government. You can’t have both.” Article 35, sponsored by the committee itself, would modernize it instead — adding the fire and police chiefs and the town administrator as members, shifting from monthly to quarterly meetings and formalizing an advisory role on public ways and buildings warrant articles.</p>
+    <p>Nearly every department head who spoke at a public forum April 9 at the Judy and Gene Jacobi Community Center declined to support dissolution. Recreation and Parks Superintendent Jamie Bloch offered the most concrete argument, pointing to the Reynolds Field project: “By having that committee, there’s been $818,000 in efficiencies identified. Without that meeting, those identifications wouldn’t have happened.” DPW Superintendent Amy McHugh, who also read a formal statement from committee members at the FinCom warrant hearing, said the panel is advisory and technical, not political: “We provide the decisions to the voters.” Finance Director Aleesha Benjamin was the one department head who expressed concern that the committee structure works around the town administrator’s authority, but added she values its collaborative spirit.</p>
+    <p>If Article 34 passes, the committee dissolves. If Article 35 passes, it continues in narrower form. If neither passes, the current structure remains intact. FinCom made no recommendation on either article and said it would be a strong debate for the Town Meeting floor. The charter committee is also examining the issue.</p>
+    <p class="source-cite"><em>Source: </em><a href="https://www.marbleheadindependent.com/marblehead-department-heads-push-back-on-plan-to-dissolve-public-works-committee/" target="_blank"><em>Marblehead department heads push back on plan to dissolve Public Works Committee</em></a></p>
+    <div class="section-header"><h2>What the meeting is really about</h2><div class="header-rule"></div></div>
+    <h3>Where the money goes</h3>
+    <p>The FY2027 general fund budget is $109.78 million (Article 23). Schools account for $47.62 million — roughly 43 percent of the general fund, though once shared benefits are allocated to the employees who drive them, the school share rises to about 63 percent of functional spending. Health insurance alone is budgeted at roughly $15.8 million after the GIC approved an 11.17 percent premium increase for active employees. Pension catch-up payments are rising 8.6 percent annually and will not level off until 2036. Debt service totals $11.1 million. The enterprise funds — sewer ($4.8 million), water ($6.87 million) and harbor ($1.32 million) — add another $12.99 million for a combined budget of $122.77 million.</p>
+    <p>Under Proposition 2½, Marblehead’s property tax levy can rise by about $2.2 million a year. Health insurance increases alone could approach $2 million in FY2027. Finance Director Aleesha Benjamin put the math simply: “At 15 percent, the increase is almost $2 million. It eats it all.”</p>
+    <!-- HEALTH INSURANCE CHART -->
+<div class="chart-wrapper">
+<div class="top-rule">
+<div class="top-rule-inner">
+<h2>Health insurance: the cost that ate the budget</h2>
+<p class="subtitle">Town spending on health insurance, FY2002–FY2027 (budgeted)</p>
+</div>
+</div>
+
+<div class="eras">
+  <span class="era-tag" style="background:#fce4e4">Escalation</span>
+  <span class="era-tag" style="background:#dcf0e0">GIC switch</span>
+  <span class="era-tag" style="background:#dde6f0">Plateau</span>
+  <span class="era-tag" style="background:#f5edde">Rebound</span>
+</div>
+
+<div class="chart-box"><canvas id="insuranceChart"></canvas></div>
+
+<div class="callout"><strong>The levy squeeze:</strong> Under Proposition 2½, the tax levy rises about $2.2 million per year. The FY2027 health insurance increase alone — from $13.7 million to $15.8 million — consumes roughly $2.1 million of that growth before any other spending. Against a projected municipal budget of about $112 million, the town spends roughly one out of every $7 on employee and retiree health coverage.</div>
+
+<p class="source">FY2027 is the budgeted amount based on adopted GIC rates ($15,814,317). FY25 actual: $12.3M. Sources: FinCom budget presentations, GIC rate announcements and Marblehead Independent reporting.</p>
+</div>
+    <p>The base budget (Article 23) represents the no-override floor. If any override passes, supplemental appropriations in Article 29 restore some of what was cut. If the override fails entirely, those supplemental articles are moot.</p>
+    <p><strong>What the budget buys — and doesn't</strong></p>
+    <p>The Select Board approved a $56.6 million town-side budget on March 27 in a 3-1 vote (Zisson dissenting, Singer absent), finalizing a spending plan that eliminates about 18 positions and cuts $60,000 from pothole funding. The Finance Committee's inaugural Super Saturday on March 28 identified 35.75 full-time-equivalent positions eliminated across town departments.</p>
+    <p>The cuts are real. Community Development and Planning drops from $494,000 to $204,000, effectively halving the department and eliminating the director's own position. The police department will go from 32 sworn officers to 30, losing the school resource officer. Fire is running 96-hour shifts on forced overtime with six personnel out on injury. DPW has shrunk from more than 30 workers to 19 over the years — and this winter its snow spending hit $636,000 against a $105,000 annual budget. The building department lost its custodian. Library services face a 42.57 percent budget reduction. The town's first sustainability coordinator, Logan Casey, departed in March for a job with the MBTA after two years and $745,000 in grants secured — a position unlikely to be refilled.</p>
+    <p>On the school side, the School Committee voted unanimously on April 9 to approve a $47.6 million fiscal year 2027 budget that eliminates 22 positions (18.25 full-time equivalents) across the district and draws down a key financial reserve to close a $3.1 million gap. The budget is $1.5 million below the current year — a 3.05 percent reduction and the first time the district has cut spending from the prior year's appropriation. A late-breaking tuition increase complicated the picture further: the district learned days before the vote that its educational collaborative was raising tuitions an average of 9.4 percent, with the highest-tier programs climbing 12 percent. That unanticipated cost surge pushed total position reductions from 14.75 to 18.25 full-time equivalents. To balance the books, administrators will prepay $1.5 million in out-of-district special education tuition from accumulated surpluses — a one-time maneuver that cannot be repeated. Enrollment has declined 24 percent since 2016, from 3,144 to 2,435 students, and is projected to fall by another 86 next fall.</p>
+    <!-- BUDGET BREAKDOWN CHART -->
+<div class="chart-wrapper">
+<h2>Where the $122.77 million goes</h2>
+<p class="subtitle">FY2027 combined budget: $109.78M general fund + $12.99M enterprise funds</p>
+
+<div class="chart-wrap">
+  <div class="chart-box"><canvas id="budgetChart"></canvas></div>
+  <div class="legend" id="legend"></div>
+</div>
+<div class="detail-box" id="detail">Hover over a slice or legend item for details.</div>
+<p class="source">Source: 2026 Annual Town Meeting warrant and Select Board-approved FY2027 budget. Categories are approximate; some line items cut across school and town departments.</p>
+</div>
+    <p class="source-cite"><em>Sources: </em><a href="https://www.marbleheadindependent.com/marblehead-officials-map-out-possible-262-trash-fee-if-override-fails/" target="_blank"><em>Officials map out possible $262 trash fee</em></a><em> · </em><a href="https://www.marbleheadindependent.com/board-of-health-reviews-trash-fee-scenario/" target="_blank"><em>Board of Health reviews trash fee scenario</em></a><em> · </em><a href="https://www.marbleheadindependent.com/kezer-benjamin-present-9m-to-15m-tiered-override-plan-and-separate-2-3m-trash-tax-option/" target="_blank"><em>Kezer, Benjamin present $9M-to-$15M tiered override plan and separate $2.3M trash tax option</em></a></p>
+    <p><strong>Trash and curbside collection</strong><br>The budget introduces a $2,186,516 curbside collection line item — the cost of the Republic Services contract for weekly trash pickup, weekly recycling and eight weeks of leaf and grass removal. A separate $2,298,575 override question would fund curbside service through the tax levy instead. If voters reject it, the Board of Health would establish a fee-based system at roughly $262 per household.</p>
+    <p>New barcoded 65-gallon trash bins and 95-gallon recycling bins will be distributed to all 8,000 households in June, financed at roughly $210,000 per year over five years. Republic will only collect material placed in barcoded containers. The contract includes a 5 percent annual escalator.</p>
+    <p class="source-cite"><em>Sources: </em><a href="https://www.marbleheadindependent.com/marblehead-officials-map-out-possible-282-trash-fee-if-override-fails/" target="_blank"><em>Officials map out possible $262 trash fee</em></a> · <a href="https://www.marbleheadindependent.com/marblehead-officials-map-out-possible-282-trash-fee-if-override-fails/" target="_blank"><em>Board of Health reviews trash fee scenario</em></a></p>
+    <p><strong>The zoning vote</strong><br>Article 4 creates a Multifamily Overlay District with two subdistricts: Broughton Road (maximum density of 19 units per acre) and Tedesco Country Club (maximum density of 25 units per acre). Maximum building height is 35 feet. Projects with more than six units must include 10 percent affordable housing. The Planning Board would serve as the plan approval authority. Requires a two-thirds supermajority.</p>
+    <p>This is the fourth vote in three years. The attorney general filed suit in January but is holding off on further action pending the May town meeting vote. Noncompliance has cost Marblehead access to MassWorks grants, Housing Choice grants and other state funding totaling nearly $4 million. Council on Aging medical transport is also at risk.</p>
+    <p><strong>The governance questions</strong><br>Four citizen petitions (Articles 37-40) and two competing articles on the Public Works Committee (Articles 34 and 35) test how much structural change voters want. Article 34, sponsored by the Select Board, would dissolve the Public Works Committee entirely. Article 35, sponsored by the committee itself, would modernize its membership and duties. Only one can pass.</p>
+    <p>Article 39 seeks to repeal the Department of Planning and Community Development that Town Meeting created just two years ago — the same department whose director, Brendan Callahan, presented a budget that eliminates his own position. Article 37 would limit all non-union municipal employment contracts to one year. Article 38 would restore one-year Select Board terms.</p>
+    <p><strong>The June 9 election</strong><br>Town Meeting authorizes an override, but voters must ratify it at the ballot box. That ballot is June 9 — and it will be one of the broadest in recent memory: 24 seats across 11 elected bodies, including two Select Board seats, two School Committee seats, library trustees and the Board of Health. Nomination papers are due April 21. The override questions will appear on this same ballot, meaning the candidates running for office and the override debate will be inextricable</p>
+    <p class="source-cite"><em>Sources: </em><a href="https://www.marbleheadindependent.com/a-big-ballot-for-marblehead-24-seats-open-in-june-town-election/" target="_blank"><em>24 seats open in June town election</em></a> · <a href="https://www.marbleheadindependent.com/ferrante-pulls-for-select-board-as-marbleheads-24-seat-june-ballot-opens/" target="_blank"><em>Ferrante pulls for Select Board</em></a></p>
+    <!-- VOTING RECORD CHART -->
+<div class="chart-wrapper">
+<h2>How Marblehead votes: 114 ballot questions since 1982</h2>
+<p class="subtitle">Proposition 2½ votes by type — passed vs. failed</p>
+<div class="chart-box"><canvas id="overrideChart"></canvas></div>
+<div class="legend-row">
+  <div class="legend-dot"><span style="background:#3D7A47"></span> Passed</div>
+  <div class="legend-dot"><span style="background:#C2261D"></span> Failed</div>
+</div>
+
+<div class="divider">
+  <h3>Key dates</h3>
+  <div class="timeline">
+    <div class="tl-item"><span class="tl-date">Nov. 4, 1980</span><span class="tl-text">Prop. 2½ passes statewide. Marblehead votes 8,565-3,658 in favor — 86.4% turnout.</span></div>
+    <div class="tl-item"><span class="tl-date">June 15, 2005</span><span class="tl-text">Last successful operating override: $2.73M added to the levy. No operating override has passed since.</span></div>
+    <div class="tl-item"><span class="tl-date">June 15, 2010</span><span class="tl-text">All 10 override questions rejected. Combined: 21,065 yes vs. 37,027 no. Glover School returns a year later, $5M cheaper, and passes.</span></div>
+    <div class="tl-item"><span class="tl-date">2022 and 2023</span><span class="tl-text">Operating overrides fail in consecutive years.</span></div>
+  </div>
+</div>
+
+<div class="callout"><strong>The pattern:</strong> Marblehead funds things it can see and touch — debt exclusions pass 81% of the time. Operating overrides pass 14%. The Select Board's three-tier structure is a bet that defined, accountable tiers will be treated more like a debt exclusion.</div>
+<p class="source">Source: Marblehead Independent analysis of every Proposition 2½ vote since 1982.</p>
+</div>
+    <div class="section-header section-header-alt"><h2>MHTV coverage</h2><div class="header-rule"></div></div>
+    <p>MHTV has offered some of the clearest public-facing coverage of Marblehead’s Town Meeting season, documenting how the budget, warrant and override debate took shape over time. Its recent programming includes the <strong>April 8 Select Board meeting</strong>, where the override dollar spectrum debuted; the <strong>April 6 Finance Committee warrant hearing</strong>, where the Finance Committee weighed in on the financial articles; the <strong>March 28 Finance Committee budget hearings, Parts 1 and 2</strong>, which provided a granular look at nearly every corner of municipal government; the <strong>March 25 Select Board meeting</strong>, where board members chose override frameworks; and the <strong>Jan. 28 Select Board meeting</strong>, focused on the State of the Town. Taken together, that coverage gives residents a detailed view of how officials have framed the town’s budget choices before Town Meeting.</p>
+    <p>— April 8:&nbsp;<a href="https://marbleheadtv.org/episodes/marblehead-select-board-meeting-4-8-26/" target="_blank">Marblehead Select Board meeting</a> - Override dollar spectrum debuted. <br>— April 6:&nbsp;<a href="https://marbleheadtv.org/episodes/marblehead-finance-committee-warrant-hearing-4-6-26/" target="_blank">Marblehead Finance Committee warrant hearing</a> - Finance Committee weighs in on finciail articles on teh warrant. <br>— March 28:&nbsp;<a href="https://marbleheadtv.org/episodes/marblehead-finance-committee-budget-hearing-part-2-3-28-26/" target="_blank">Marblehead Finance Committee budget hearing, part 2</a> - a granular look at every corner and department of municipal government<br>— March 28:&nbsp;<a href="https://marbleheadtv.org/episodes/marblehead-finance-committee-budget-hearings-part-1-3-28-26/" target="_blank">Marblehead Finance Committee budget hearings, part 1</a> - a granular look at every corner and department of municipal government<br>— March 25:&nbsp;<a href="https://marbleheadtv.org/episodes/marblehead-select-board-meeting-3-25-26/" target="_blank">Marblehead Select Board meeting</a> - Meeting in which Select Board members picked override frameworks<br>— Jan. 28:&nbsp;<a href="https://marbleheadtv.org/episodes/marblehead-select-board-meeting-1-28-26-state-of-the-town/" target="_blank">Marblehead Select Board meeting: State of the Town</a></p>
+    <p><strong>Headliner episodes</strong></p>
+    <p>MHTV also devoted three recent episodes of <em>Headliner</em> to the Town Meeting warrant, with anchor John Caswell joined throughout by Marblehead Independent editor Will Dowd and Marblehead Current editor Leigh Blander. In the <strong>March 13 episode</strong>, the discussion focused on the nonfinancial articles, including the latest MBTA Communities 3A overlay proposal, accessory dwelling unit changes, a proposed cryptocurrency ATM ban and a warrant article involving the DPW committee. In the <strong>March 20 episode</strong>, the panel turned to the citizen-sponsored articles, including proposals dealing with one-year municipal contracts, one-year Select Board terms and the possible repeal of the Department of Planning and Community Development. In the <strong>April 3 episode</strong>, Marblehead Weekly News editor Sophia Harris joined Caswell, Dowd and Blander for a discussion of the financial articles, including the town budget, likely school cuts, the trash question and the override structure taking shape ahead of Town Meeting.</p>
+    <p><strong>First episode</strong><br>In the March 13 episode, Headliner anchor John Caswell is joined by Marblehead Independent editor Will Dowd and Marblehead Current editor Leigh Blander for the first installment of the warrant discussion, focused on the nonfinancial articles. The panel centers on Article 4, Marblehead’s latest MBTA Communities 3A overlay proposal, explaining how it differs from earlier versions, why public opposition appears to have softened and what is at stake if the town remains out of compliance. They also discuss changes to the accessory dwelling unit bylaw, a proposed cryptocurrency ATM ban tied to scam concerns and a warrant article involving the DPW committee.</p>
+    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;margin:20px 0;">
+      <iframe src="https://player.vimeo.com/video/1173433911" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <p><strong>Second episode</strong><br>In the March 20 episode, Caswell, Dowd and Blander turn to the citizen-sponsored articles, including several submitted by William Kuker. Their discussion focuses on proposals to limit non-union municipal contracts to one year, return Select Board terms to one year and repeal the Department of Planning and Community Development. The conversation weighs the appeal of stronger accountability against the practical problem of recruiting and retaining town staff, while also asking whether Marblehead is in danger of dismantling a planning apparatus just as major zoning, housing and grant-related work is coming into focus.</p>
+    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;margin:20px 0;">
+      <iframe src="https://player.vimeo.com/video/1175602936" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <p><strong>Third episode</strong><br>In the April 3 episode, Caswell is joined by Dowd, Blander and Marblehead Weekly News editor Sophia Harris for the final installment, focused on the financial articles. The panel breaks down Article 23, the fiscal 2027 budget, including the scale of the spending plan, additional school cuts still to come and the prospect of more staff reductions. They also walk viewers through the override strategy taking shape, including a separate trash question and a tiered approach to restoring or expanding services, while making clear what residents stand to lose if those measures fail.</p>
+    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;margin:20px 0;">
+      <iframe src="https://player.vimeo.com/video/1179991309" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <div class="section-header"><h2>Source library</h2><div class="header-rule"></div></div>
+
+    <p><strong>Finance and budget:</strong><br>—&nbsp;<a href="https://drive.google.com/file/d/1V0Bwkf3GJdyA2QIoV1Md2qQESARaDLSW/view?usp=sharing" target="_blank">FY2027 budget and override options</a><br>— March 11:&nbsp;<a href="https://drive.google.com/file/d/1k5GlA7sI9lFSQtTm8ZWvim1yPx-LN3ol/view?usp=sharing" target="_blank">Budget process summary</a><br>— Feb. 27:&nbsp;<a href="https://drive.google.com/file/d/14X7oDQ461OrqCn3G4G6JvHRHR8SdJrTV/view?usp=sharing" target="_blank">Health insurance outlook: Town of Marblehead</a><br>—&nbsp;<a href="https://drive.google.com/file/d/1UckIw2p6_MyRFU8l7qHwydQCkNWjD6aa/view?usp=sharing" target="_blank">Town of Marblehead FY2027 financial forecast</a><br>— Oct. 22, 2025:&nbsp;<a href="https://drive.google.com/file/d/1zEG5cB7i0jypiUC_ombProyxJwMcv3Xq/view?usp=sharing" target="_blank">2025 GASB 75 results presentation</a><br>— Aug. 6, 2025:&nbsp;<a href="https://drive.google.com/file/d/1HqGfY_KD8iXYXcvCydA_wxbJEmCTfzpD/view?usp=sharing" target="_blank">2025 GASB 74 &amp; GASB 75 actuarial valuation report</a><br>—&nbsp;<a href="https://drive.google.com/file/d/1arwmUiO6EVrEw1PvnwmI4eQMR_S8devs/view?usp=sharing" target="_blank">2025 Town of Marblehead employee earnings history</a><br>— Jan. 1, 2024:&nbsp;<a href="https://drive.google.com/file/d/1P1cWxyK6M0IedHBixeFbkDu_tPGtEhCC/view?usp=drive_link" target="_blank">2024 Marblehead Retirement System actuarial valuation report</a><br>—&nbsp;<a href="https://drive.google.com/file/d/1oPxtXQsrDrZgZQcIAXogqg8XFlnjNh4e/view?usp=sharing" target="_blank">FY2027 proposed budget detail</a><br>—&nbsp;<a href="https://drive.google.com/file/d/18tKooqKOUsaB0oDMUi1-Xvt7LMAqAheI/view?usp=sharing" target="_blank">Proposed FY27 balanced budget with no override</a></p>
+    <p><strong>Town Meeting and voting:</strong><br>—&nbsp;<a href="https://drive.google.com/file/d/1P08Ug1oOd_xJT_uHQ6a8R7uUkGSle_NJ/view?usp=sharing" target="_blank">2026 Annual Town Meeting warrant</a><br>— &nbsp;<a href="https://drive.google.com/file/d/1drqHJpLvpugWNvpOZ85pFmT26wDdIfrm/view?usp=sharing" target="_blank">Town of Marblehead citizen petition for 2026 Annual Town Meeting</a><br>— <a href="https://drive.google.com/file/d/1d3OOF4zQhdXYjZ4ewtEOZL4-ARB5_dkf/view?usp=sharing" target="_blank">Citizen’s article petition guide</a><br>— <a href="https://drive.google.com/file/d/1H9x1xErGCJIcTgujOeKkUHvne44MkYLD/view?usp=sharing" target="_blank">Annual Town Meeting presentation</a><br>— <a href="https://drive.google.com/file/d/14nQ133pXntqCUKYu0ChKSSEQNoD73zml/view?usp=sharing" target="_blank">A practical guide to Marblehead Town Meeting</a><br>— <a href="https://drive.google.com/file/d/1L6skrIw60Vrv3Ke0Hu-Fh5SfoRoLjNvM/view?usp=sharing" target="_blank">Message from the Town Moderator</a><br>— <a href="https://drive.google.com/file/d/1PBbUe6pRfX3TROVJyKBoWygszzF6WjDr/view?usp=sharing" target="_blank">Introductory guide to Town Meeting</a></p>
+    <p><strong>Policy and tax presentations:</strong><br>— Dec. 2, 2025:&nbsp;<a href="https://docs.google.com/presentation/d/1nSf5mTJROl-3bSW7FLWK59I_0FWnAZMb/edit?usp=sharing&amp;ouid=108319006691689599759&amp;rtpof=true&amp;sd=true" target="_blank">Recommendation to adopt the Minimum Residential Factor (MRF)</a></p>
+    <p><strong>News and context:</strong><br>— Jan. 23:&nbsp;<a href="https://drive.google.com/file/d/1OJJFp3Ens75hvZ_KcK-BxV1-ZIAk4hkG/view?usp=sharing" target="_blank">Marblehead’s $65.2M payroll: What the town paid 1,185 workers in FY2025</a><br>— Jan. 24:&nbsp;<a href="https://drive.google.com/file/d/1josmPqaw198SNdiKiY3dBdg2iYibvYJx/view?usp=sharing" target="_blank">FY2027 State of the Town to frame Marblehead’s next budget debate</a></p>
+    <p><strong>Independent coverage:</strong><br>— April 10:&nbsp;<a href="https://www.marbleheadindependent.com/school-committee-approves-cuts-heavy-budget-joins-select-boards-override-push" target="_blank">School Committee approves cuts-heavy budget, joins Select Board's override push</a><br>— April 9:&nbsp;<a href="https://www.marbleheadindependent.com/marblehead-department-heads-push-back-on-plan-to-dissolve-public-works-committee" target="_blank">Marblehead department heads push back on plan to dissolve Public Works Committee</a><br>— April 9:&nbsp;<a href="https://www.marbleheadindependent.com/select-board-eyes-three-year-no-override-pledge-as-part-of-override-package" target="_blank">Select Board eyes three-year no-override pledge as part of override package</a><br>— April 8:&nbsp;<a href="https://www.marbleheadindependent.com/kezer-presents-9m-to-15m-tiered-override-plan-and-separate-2-2m-trash-tax-option" target="_blank">Kezer presents $9M-to-$15M tiered override plan and separate $2.2M trash tax option</a><br>— April 7:&nbsp;<a href="https://www.marbleheadindependent.com/news-analysis-marbleheads-override-questions-will-test-two-theories-of-how-voters-say-yes" target="_blank">NEWS ANALYSIS: Marblehead's override questions will test two theories of how voters say yes</a><br>— April 7:&nbsp;<a href="https://www.marbleheadindependent.com/in-independent-survey-override-mbta-article-hold-early-lead" target="_blank">In Independent survey, overrides, MBTA article hold early lead</a><br>— April 7:&nbsp;<a href="https://www.marbleheadindependent.com/marblehead-advances-122-8m-budget-built-on-cuts-defers-override-decisions" target="_blank">Marblehead advances $122.8M budget built on cuts, defers override decisions</a><br>— April 5:&nbsp;<a href="https://www.marbleheadindependent.com/marblehead-light-board-oks-new-ev-charging-rates-adds-overnight-fee-exemption" target="_blank">Marblehead Light Board OKs new EV charging rates, adds overnight fee exemption</a><br>— April 4:&nbsp;<a href="https://www.marbleheadindependent.com/after-43-years-on-the-board-of-assessors-kelley-says-he-wont-seek-reelection" target="_blank">After 43 years on the Board of Assessors, Kelley says he won't seek reelection</a><br>— March 28:&nbsp;<a href="https://www.marbleheadindependent.com/inaugural-fincom-super-saturday-advances-enterprise-budgets-sketches-out-trash-fee-plan-and-confronts-early-staffing-cuts" target="_blank">Inaugural FinCom 'Super Saturday' advances enterprise budgets, sketches out trash-fee plan</a><br>— March 27:&nbsp;<a href="https://www.marbleheadindependent.com/select-board-approves-fiscal-2027-budget-3-1-sends-package-to-town-meeting" target="_blank">Select Board approves fiscal 2027 budget 3-1, sends package to Town Meeting</a><br>— March 27:&nbsp;<a href="https://www.marbleheadindependent.com/school-committee-oks-1-5m-in-cuts-turns-to-override-push" target="_blank">School Committee OKs $1.5M in cuts, turns to override push</a><br>— March 26:&nbsp;<a href="https://www.marbleheadindependent.com/select-board-locks-in-three-tier-override-structure-votes-to-unite-town-and-school-ask" target="_blank">Select Board locks in three-tier override structure, votes to unite town and school ask</a><br>— March 25:&nbsp;<a href="https://www.marbleheadindependent.com/ask-the-independent-menu-or-tiered-how-override-ballot-questions-work/" target="_blank">ASK THE INDEPENDENT: Menu or tiered? How override ballot questions work</a><br>— March 25:&nbsp;<a href="https://www.marbleheadindependent.com/school-subcommittee-deadlocks-over-462-000-insurance-reserve-sends-two-budgets-to-friday-vote" target="_blank">School subcommittee deadlocks over $462,000 insurance reserve</a><br>— March 25:&nbsp;<a href="https://www.marbleheadindependent.com/marblehead-officials-map-out-possible-282-trash-fee-if-override-fails" target="_blank">Marblehead officials map out possible $282 trash fee if override fails</a><br>— March 21:&nbsp;<a href="https://www.marbleheadindependent.com/ferrante-pulls-for-select-board-as-marbleheads-24-seat-june-ballot-opens" target="_blank">Ferrante pulls for Select Board as Marblehead's 24-seat June ballot opens</a><br>— March 20:&nbsp;<a href="https://www.marbleheadindependent.com/cuts-across-departments-shape-select-boards-56-6m-budget" target="_blank">Cuts across departments shape Select Board's $56.6M budget</a><br>— March 18:&nbsp;<a href="https://www.marbleheadindependent.com/marblehead-officials-put-structure-around-the-fy2027-budget-season" target="_blank">Marblehead officials put structure around the FY2027 budget season</a><br>— March 16:&nbsp;<a href="https://www.marbleheadindependent.com/a-big-ballot-for-marblehead-24-seats-open-in-june-town-election" target="_blank">A big ballot for Marblehead: 24 seats open in June town election</a><br>— March 13:&nbsp;<a href="https://www.marbleheadindependent.com/marbleheads-structural-deficit-comes-for-jobs-services-and-fees" target="_blank">Marblehead's structural deficit comes for jobs, services and fees</a><br>— March 13:&nbsp;<a href="https://www.marbleheadindependent.com/schools-asked-to-cut-again-after-already-building-level-funded-budget" target="_blank">Schools asked to cut again after already building level-funded budget</a><br>— March 11:&nbsp;<a href="https://www.marbleheadindependent.com/marblehead-sustainability-coordinator-logan-casey-leaving-for-job-with-mbta" target="_blank">Sustainability Coordinator Logan Casey leaving for job with MBTA</a><br>— March 9:&nbsp;<a href="https://www.marbleheadindependent.com/gic-sets-health-insurance-rates-locking-in-major-cost-driver-for-marbleheads-fy2027-budget" target="_blank">GIC sets health insurance rates, locking in major cost driver for FY2027 budget</a><br>— March 5:&nbsp;<a href="https://www.marbleheadindependent.com/marblehead-officials-outline-stark-choices-as-town-faces-millions-in-budget-cuts-for-fy2027" target="_blank">Officials outline stark choices as town faces millions in budget cuts</a><br>— March 3:&nbsp;<a href="https://www.marbleheadindependent.com/ousted-mmld-general-manager-sues-light-commissioners-seeks-more-than-320-000-over-dismissal" target="_blank">Ousted MMLD general manager sues light commissioners</a><br>— Feb. 27:&nbsp;<a href="https://www.marbleheadindependent.com/concerns-over-staffing-cuts-shape-marblehead-school-budget-hearing" target="_blank">Concerns over staffing cuts shape school budget hearing</a><br>— Feb. 27:&nbsp;<a href="https://www.marbleheadindependent.com/40-article-warrant-puts-mbta-zoning-before-marblehead-voters-for-fourth-time" target="_blank">40-article warrant puts MBTA zoning before voters for fourth time</a><br>— Feb. 26:&nbsp;<a href="https://www.marbleheadindependent.com/marblehead-snow-operations-exceed-budget-amid-heavy-winter" target="_blank">Snow operations exceed budget amid heavy winter</a><br>— Feb. 25:&nbsp;<a href="https://www.marbleheadindependent.com/marblehead-to-hold-information-session-on-revised-mbta-zoning-plan" target="_blank">Marblehead to hold information session on revised MBTA zoning plan</a><br>— Feb. 21:&nbsp;<a href="https://www.marbleheadindependent.com/marblehead-closes-municipal-buildings-declares-parking-ban-ahead-of-blizzard" target="_blank">Marblehead closes municipal buildings, declares parking ban ahead of blizzard</a><br>— Feb. 21:&nbsp;<a href="https://www.marbleheadindependent.com/blizzard-warning-issued-for-marblehead-as-fourth-major-storm-of-winter-takes-aim-at-north-shore" target="_blank">Blizzard warning issued as fourth major storm takes aim at North Shore</a><br>— Feb. 13:&nbsp;<a href="https://www.marbleheadindependent.com/abatement-filings-drop-sharply-after-assessment-reforms" target="_blank">Abatement filings drop sharply after assessment reforms</a><br>— Feb. 13:&nbsp;<a href="https://www.marbleheadindependent.com/from-crypto-to-mbta-zoning-kezer-previews-select-board-sponsored-warrant-articles" target="_blank">From crypto to MBTA zoning, Kezer previews warrant articles</a><br>— Feb. 12:&nbsp;<a href="https://www.marbleheadindependent.com/sally-sands-appointed-to-fill-tucker-vacancy-on-cemetery-commission" target="_blank">Sally Sands appointed to fill Tucker vacancy on Cemetery Commission</a><br>— Feb. 12:&nbsp;<a href="https://www.marbleheadindependent.com/select-board-confronts-the-limits-of-marbleheads-tax-cap" target="_blank">Select Board confronts the limits of Marblehead's tax cap</a><br>— Feb. 11:&nbsp;<a href="https://www.marbleheadindependent.com/planning-board-races-to-finalize-mbta-zoning-adu-changes-before-town-meeting" target="_blank">Planning Board races to finalize MBTA zoning, ADU changes before Town Meeting</a><br>— Feb. 7:&nbsp;<a href="https://www.marbleheadindependent.com/the-line-item-eating-marbleheads-tax-levy" target="_blank">The line item eating Marblehead's tax levy</a><br>— Feb. 5:&nbsp;<a href="https://www.marbleheadindependent.com/state-gives-marblehead-positive-review-on-mbta-zoning-proposal" target="_blank">State gives Marblehead positive review on MBTA zoning proposal</a><br>— Feb. 5:&nbsp;<a href="https://www.marbleheadindependent.com/marblehead-board-of-health-endorses-addiction-recovery-series-approves-transfer-station-changes" target="_blank">Board of Health endorses addiction recovery series, approves transfer station changes</a><br>— Feb. 3:&nbsp;<a href="https://www.marbleheadindependent.com/finance-committee-presses-for-detail-behind-marbleheads-8-5m-budget-gap" target="_blank">Finance Committee presses for detail behind $8.4M budget gap</a><br>— Jan. 29:&nbsp;<a href="https://www.marbleheadindependent.com/whats-next-for-marblehead-as-officials-confront-8-47-million-budget-gap" target="_blank">What's next as officials confront $8.47 million budget gap</a><br>— Jan. 29:&nbsp;<a href="https://www.marbleheadindependent.com/attorney-general-sues-marblehead-for-mbta-noncompliance" target="_blank">Attorney General sues Marblehead for MBTA noncompliance</a><br>— Jan. 29:&nbsp;$8.4M budget gap could mean 50-plus job cuts without new revenue<br>— Jan. 28:&nbsp;<a href="https://www.marbleheadindependent.com/analysis-reveals-sharp-divide-in-marbleheads-prop-2-1-2-votes" target="_blank">Analysis reveals sharp divide in Marblehead's Prop. 2½ votes</a><br>— Jan. 26:&nbsp;<a href="https://www.marbleheadindependent.com/select-board-declares-state-of-emergency" target="_blank">Marblehead Select Board declares snow emergency</a><br>— Jan. 24:&nbsp;<a href="https://www.marbleheadindependent.com/fy2027-state-of-the-town-to-frame-marbleheads-next-budget-debate" target="_blank">FY2027 State of the Town to frame next budget debate</a><br>— Jan. 24:&nbsp;<a href="https://www.marbleheadindependent.com/four-citizen-petitions-for-2026-annual-town-meeting-submited" target="_blank">Four citizen petitions for 2026 Annual Town Meeting submitted</a><br>— Jan. 16:&nbsp;<a href="https://www.marbleheadindependent.com/marbleheads-128m-budget-grows-but-the-squeeze-inside-it-tightens" target="_blank">Marblehead's $128M budget grows, but the squeeze inside it tightens</a><br>— Jan. 15:&nbsp;<a href="https://www.marbleheadindependent.com/new-finance-committee-member-brings-accounting-expertise-commitment-to-public-service" target="_blank">New Finance Committee member brings accounting expertise</a><br>— Jan. 15:&nbsp;<a href="https://www.marbleheadindependent.com/select-board-denies-thomas-circle-tree-removal-postpones-decision-on-municipal-pines" target="_blank">Select Board denies Thomas Circle tree removal</a><br>— Jan. 15:&nbsp;<a href="https://www.marbleheadindependent.com/kezer-cummings-outline-ada-progress-costs-and-long-road-ahead" target="_blank">Kezer, Cummings outline ADA progress, costs and long road ahead</a><br>— Jan. 14:&nbsp;<a href="https://www.marbleheadindependent.com/attorney-general-sets-end-of-january-deadline-for-mbta-zoning-enforcement" target="_blank">Attorney General sets end-of-January deadline for MBTA zoning enforcement</a><br>— Jan. 14:&nbsp;<a href="https://www.marbleheadindependent.com/jerry-tucker-resigns-from-cemetery-commission-after-moving-out-of-town" target="_blank">Jerry Tucker resigns from Cemetery Commission</a><br>— Jan. 14:&nbsp;<a href="https://www.marbleheadindependent.com/planning-board-advances-revised-mbta-zoning-to-may-town-meeting-after-state-identifies-six-technical-fixes" target="_blank">Planning Board advances revised MBTA zoning to May Town Meeting</a><br>— Jan. 10:&nbsp;<a href="https://www.marbleheadindependent.com/state-flags-six-fixes-marblehead-must-make-to-revive-its-mbta-zoning-plan" target="_blank">State flags six fixes Marblehead must make to revive MBTA zoning plan</a><br>— Jan. 8:&nbsp;<a href="https://www.marbleheadindependent.com/marblehead-harbors-and-waters-board-creates-subcommittee-to-name-new-harbormaster-vessel" target="_blank">Harbors and Waters Board creates subcommittee to name new harbormaster vessel</a><br>— Jan. 5:&nbsp;<a href="https://www.marbleheadindependent.com/marblehead-schools-pare-1-7m-budget-gap-to-879-000" target="_blank">Schools pare $1.7M budget gap to $879,000</a><br>— Jan. 5:&nbsp;<a href="https://www.marbleheadindependent.com/public-works-committee-opens-towns-first-meeting-of-the-year-signs-off-on-warrant-article" target="_blank">Public Works Committee opens town's first meeting of the year</a><br>— Dec. 19:&nbsp;<a href="https://www.marbleheadindependent.com/school-committee-examines-ap-participation-growth-enrollment-decline" target="_blank">School Committee examines AP participation growth, enrollment decline</a><br>— Dec. 11:&nbsp;<a href="https://www.marbleheadindependent.com/marblehead-residents-narrowly-favor-tedesco-country-club-zoning-plan-to-meet-state-housing-law" target="_blank">Respondents narrowly favor country club zoning plan</a><br>— Dec. 9:&nbsp;<a href="https://www.marbleheadindependent.com/new-mbta-zoning-map-would-center-housing-district-on-tedesco-country-club" target="_blank">New MBTA zoning map would center housing district on Tedesco Country Club</a><br>— Dec. 9:&nbsp;<a href="https://www.marbleheadindependent.com/beauport-ambulance-cuts-ribbon-on-renovated-marblehead-base" target="_blank">Beauport Ambulance cuts ribbon on renovated Marblehead base</a><br>— Dec. 3:&nbsp;<a href="https://www.marbleheadindependent.com/mbta-zoning-repeal-among-record-number-of-2026-ballot-questions" target="_blank">MBTA zoning repeal among record number of 2026 ballot questions</a><br>— Dec. 3:&nbsp;<a href="https://www.marbleheadindependent.com/marblehead-harbor-board-advances-fiscal-2027-budget-plans-mooring-fee-increase" target="_blank">Harbor board advances fiscal 2027 budget, plans mooring fee increase</a><br>— Dec. 3:&nbsp;<a href="https://www.marbleheadindependent.com/median-tax-bill-to-rise-84-in-fy2026-despite-rate-falling-46-cents-to-8-59" target="_blank">Median tax bill to rise $84 in FY2026 despite rate falling 46 cents</a><br>— Dec. 2:&nbsp;<a href="https://www.marbleheadindependent.com/subcommittee-weighs-fy27-budget-amid-enrollment-decline-service-expectations" target="_blank">Subcommittee weighs FY27 budget amid enrollment decline</a><br>— Dec. 2:&nbsp;<a href="https://www.marbleheadindependent.com/public-works-committee-reviews-reynolds-field-project-energy-plan-and-committees-future" target="_blank">Public Works Committee reviews Reynolds Field project, energy plan</a><br>— Nov. 25:&nbsp;<a href="https://www.marbleheadindependent.com/5-mw-battery-storage-plan-promising-500k-in-annual-savings-presented-to-light-board" target="_blank">5 MW battery storage plan promising $500K in annual savings</a><br>— Nov. 25:&nbsp;<a href="https://www.marbleheadindependent.com/marblehead-board-of-health-tackles-youth-drinking-enforcement-health-misinformation" target="_blank">Board of Health tackles youth drinking enforcement</a><br>— Nov. 23:&nbsp;<a href="https://www.marbleheadindependent.com/guest-column-with-2026-warrant-open-moderator-invites-residents-to-seek-guidance" target="_blank">GUEST COLUMN: Moderator invites residents to seek guidance</a><br>— Nov. 21:&nbsp;<a href="https://www.marbleheadindependent.com/planning-board-gets-progress-report-on-mbta-zoning-redo" target="_blank">Planning Board gets progress report on MBTA zoning redo</a><br>— Nov. 21:&nbsp;<a href="https://www.marbleheadindependent.com/select-board-opens-2026-warrant-town-meeting-venue" target="_blank">Select Board opens 2026 warrant, Town Meeting venue</a><br>— Nov. 20:&nbsp;<a href="https://www.marbleheadindependent.com/marbleheads-climate-ambitions-stymied-by-mbta-zoning-noncompliance" target="_blank">Marblehead's climate ambitions stymied by MBTA zoning noncompliance</a><br>— Nov. 18:&nbsp;<a href="https://www.marbleheadindependent.com/low-bid-for-mhs-roof-project-comes-in-2m-under-budget" target="_blank">Low bid for MHS roof project comes in $2M below budget</a><br>— Nov. 12:&nbsp;<a href="https://www.marbleheadindependent.com/board-of-health-survey-passes-2-300-responses" target="_blank">Board of Health survey passes 2,300 responses</a><br>— Nov. 4:&nbsp;<a href="https://www.marbleheadindependent.com/marblehead-eyes-tedesco-country-club-for-mbta-zoning-compliance" target="_blank">Marblehead eyes Tedesco Country Club for MBTA zoning compliance</a><br>— Nov. 4:&nbsp;<a href="https://www.marbleheadindependent.com/immigration-attorney-explores-bid-for-open-6th-district-seat" target="_blank">Immigration attorney explores bid for open 6th District seat</a><br>— Oct. 28:&nbsp;<a href="https://www.marbleheadindependent.com/marblehead-seniors-could-lose-medical-transport-as-mbta-noncompliance-blocks-state-grants" target="_blank">Seniors could lose medical transport as MBTA noncompliance blocks grants</a><br>— Oct. 28:&nbsp;<a href="https://www.marbleheadindependent.com/longtime-moulton-aide-jakious-enters-race-for-6th-district-seat" target="_blank">Longtime Moulton aide Jakious enters race for 6th District seat</a><br>— Oct. 23:&nbsp;<a href="https://www.marbleheadindependent.com/marblehead-projects-514-000-revenue-drop-in-2027" target="_blank">Marblehead projects $514,000 revenue drop in FY2027</a></p>
+
+  </article>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 <a href="https://www.marbleheadindependent.com/" target="_blank">The Marblehead Independent</a></p>
+    <p style="margin-top:6px;font-size:12px;">Reporting and design by Will Dowd and Leigh Blander</p>
+  </footer>
+
+  <script>
+  /* Trash override widget */
+  
+function miTrashTap(card) {
+  card.classList.toggle('on');
+  var isOn = card.classList.contains('on');
+  var totalEl = document.getElementById('mi-trash-total');
+  var resultEl = document.getElementById('mi-trash-result');
+  var ruleEl = document.getElementById('mi-trash-rule');
+  if (isOn) {
+    totalEl.textContent = '$2.3M';
+    resultEl.classList.add('on');
+    ruleEl.innerHTML = '&#x267B; Approved: <strong>$2.3M</strong> added to the tax levy &mdash; no more per-household trash fee';
+  } else {
+    totalEl.textContent = '$0';
+    resultEl.classList.remove('on');
+    ruleEl.innerHTML = '&#x267B; Tap above to toggle';
+  }
+}
+
+
+  /* Tiered override widget */
+  
+function miTierTap(card) {
+  card.classList.toggle('on');
+  var cards = document.querySelectorAll('#mi-tier-grid .tier-card');
+  var highestTier = 0;
+  var tierTax = {0: '', 9: '$900 over 3 years', 12: '$1,200 over 3 years', 15: '$1,500 over 3 years'};
+  cards.forEach(function(c) {
+    if (c.classList.contains('on')) {
+      var t = parseInt(c.getAttribute('data-tier'));
+      if (t > highestTier) highestTier = t;
+    }
+  });
+  var totalEl = document.getElementById('mi-tier-total');
+  var resultEl = document.getElementById('mi-tier-result');
+  var ruleEl = document.getElementById('mi-tier-rule');
+  if (highestTier > 0) {
+    totalEl.textContent = '$' + highestTier + 'M';
+    resultEl.classList.add('on');
+    ruleEl.innerHTML = '&#9650; Highest passing tier: <strong>$' + highestTier + 'M</strong> &mdash; est. tax impact: ' + tierTax[highestTier];
+  } else {
+    totalEl.textContent = '$0';
+    resultEl.classList.remove('on');
+    ruleEl.innerHTML = '&#9650; Tap the tiers above to see how it works';
+  }
+}
+
+  </script>
+
+  <script>
+  /* Health insurance chart */
+  (function() {
+  
+const labels = ["FY02","FY03","FY04","FY05","FY06","FY07","FY08","FY09","FY10","FY11","FY12","FY13","FY14","FY15","FY16","FY17","FY18","FY19","FY20","FY21","FY22","FY23","FY24","FY25","FY26","FY27*"];
+
+const spending = [9.1, 12.0, 14.5, 16.2, 18.0, 11.8, 10.5, 9.4, 9.2, 9.4, 9.5, 9.6, 9.8, 10.0, 10.1, 10.2, 10.3, 10.5, 10.7, 11.0, 11.5, 11.8, 12.2, 12.3, 13.7, 15.8];
+
+const share = [17.0, 22.0, 26.0, 29.0, 33.4, 21.0, 18.0, 16.1, 14.5, 14.2, 13.8, 13.5, 13.3, 13.1, 13.0, 12.9, 12.7, 12.6, 12.4, 12.5, 12.8, 13.0, 13.3, 13.5, 14.1, 14.1];
+
+const eraBoundaries = [
+  { start: 0, end: 4, color: "rgba(252,228,228,0.45)" },
+  { start: 5, end: 7, color: "rgba(220,240,224,0.45)" },
+  { start: 8, end: 17, color: "rgba(221,230,240,0.45)" },
+  { start: 18, end: 25, color: "rgba(245,237,222,0.45)" },
+];
+
+const bgPlugin = {
+  id: "shellWhiteBg",
+  beforeDraw(chart) {
+    const { ctx, width, height } = chart;
+    ctx.save();
+    ctx.fillStyle = "#FDF9F4";
+    ctx.fillRect(0, 0, width, height);
+    ctx.restore();
+  }
+};
+
+const eraPlugin = {
+  id: "eraBackground",
+  beforeDraw(chart) {
+    const { ctx, chartArea, scales } = chart;
+    if (!chartArea) return;
+    eraBoundaries.forEach(era => {
+      const x1 = scales.x.getPixelForValue(era.start);
+      const x2 = scales.x.getPixelForValue(era.end);
+      ctx.fillStyle = era.color;
+      ctx.fillRect(x1, chartArea.top, x2 - x1, chartArea.bottom - chartArea.top);
+    });
+  }
+};
+
+const annotationPlugin = {
+  id: "annotations",
+  afterDraw(chart) {
+    const { ctx, chartArea, scales } = chart;
+    if (!chartArea) return;
+    ctx.save();
+
+    const peakX = scales.x.getPixelForValue(4);
+    const peakY = scales.y.getPixelForValue(18.0);
+    ctx.fillStyle = "#c0392b";
+    ctx.font = "bold 11px Georgia, serif";
+    ctx.textAlign = "center";
+    ctx.fillText("$18M peak", peakX, peakY - 14);
+
+    const gicX = scales.x.getPixelForValue(5);
+    const gicY = scales.y.getPixelForValue(11.8);
+    ctx.fillStyle = "#27785a";
+    ctx.font = "bold 10px Georgia, serif";
+    ctx.fillText("GIC", gicX, gicY - 12);
+
+    const fy27X = scales.x.getPixelForValue(25);
+    const fy27Y = scales.y.getPixelForValue(15.8);
+    ctx.fillStyle = "#c0392b";
+    ctx.font = "bold 12px Georgia, serif";
+    ctx.textAlign = "right";
+    ctx.fillText("$15.8M", fy27X + 4, fy27Y - 12);
+
+    const fy02X = scales.x.getPixelForValue(0);
+    const fy02Y = scales.y.getPixelForValue(9.1);
+    ctx.fillStyle = "#9ca3af";
+    ctx.font = "11px Georgia, serif";
+    ctx.textAlign = "left";
+    ctx.fillText("$9.1M", fy02X + 6, fy02Y - 10);
+
+    ctx.restore();
+  }
+};
+
+const ctx = document.getElementById("insuranceChart").getContext("2d");
+new Chart(ctx, {
+  type: "line",
+  data: {
+    labels,
+    datasets: [{
+      label: "Spending ($M)",
+      data: spending,
+      borderColor: "#c0392b",
+      backgroundColor: "rgba(192,57,43,0.08)",
+      borderWidth: 2.5,
+      fill: true,
+      tension: 0.25,
+      pointRadius: function(context) {
+        const i = context.dataIndex;
+        if (i === 0 || i === 4 || i === 5 || i === 8 || i === 23 || i === 25) return 5;
+        return 2.5;
+      },
+      pointBackgroundColor: function(context) {
+        if (context.dataIndex === 5) return "#FFFFFF";
+        return "#c0392b";
+      },
+      pointBorderColor: function(context) {
+        if (context.dataIndex === 5) return "#27785a";
+        return "#FDF9F4";
+      },
+      pointBorderWidth: function(context) {
+        if (context.dataIndex === 5) return 2.5;
+        return 1.5;
+      },
+      pointHoverRadius: 7,
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      y: {
+        beginAtZero: true,
+        max: 20,
+        ticks: {
+          callback: v => `$${v}M`,
+          font: { family: "Georgia, serif", size: 12 },
+          color: "#9ca3af",
+          stepSize: 5,
+        },
+        grid: { color: "#e5e7eb", drawBorder: false },
+        border: { color: "#1a1a2e" },
+      },
+      x: {
+        ticks: {
+          font: { family: "Georgia, serif", size: 11 },
+          color: "#9ca3af",
+          maxRotation: 45,
+          autoSkip: true,
+          maxTicksLimit: 14,
+        },
+        grid: { display: false },
+        border: { color: "#1a1a2e" },
+      }
+    },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        titleFont: { family: "Georgia, serif", size: 14, weight: "bold" },
+        bodyFont: { family: "Georgia, serif", size: 13 },
+        backgroundColor: "#FDF9F4",
+        titleColor: "#1a1a2e",
+        bodyColor: "#4A4A4A",
+        borderColor: "#D0CCC5",
+        borderWidth: 1,
+        displayColors: false,
+        callbacks: {
+          label: (ctx) => `Spending: $${ctx.parsed.y.toFixed(1)}M`,
+          afterLabel: (ctx) => `Share of general fund: ~${share[ctx.dataIndex]}%`
+        }
+      }
+    },
+    interaction: {
+      mode: "index",
+      intersect: false,
+    },
+  },
+  plugins: [bgPlugin, eraPlugin, annotationPlugin],
+});
+
+  })();
+  </script>
+
+  <script>
+  /* Budget breakdown chart */
+  (function() {
+  
+const segments = [
+  { name: "Schools", value: 47.62, color: "#1E1F21", detail: "$47.62M · 43% of general fund; ~63% of functional spending once shared benefits are allocated" },
+  { name: "Health insurance", value: 15.83, color: "#C2261D", detail: "$15.83M · 11.17% GIC rate hike for active employees; 5.1% for retirees" },
+  { name: "Pension", value: 8.2, color: "#B85C1F", detail: "~$8.2M · Rising 8.6% annually; will not level off until 2036" },
+  { name: "Debt service", value: 11.1, color: "#6B7280", detail: "$11.1M · Includes school construction bonds" },
+  { name: "Town departments", value: 21.92, color: "#375E97", detail: "~$21.9M · Town-side operating (police, fire, DPW, library, etc.) after cuts" },
+  { name: "Curbside collection", value: 2.19, color: "#3D7A47", detail: "$2.19M · New line item; Republic Services contract" },
+  { name: "Other general fund", value: 2.92, color: "#7B5EA7", detail: "~$2.9M · Remaining general fund items" },
+  { name: "Sewer enterprise", value: 4.8, color: "#2A7A6B", detail: "$4.8M enterprise fund" },
+  { name: "Water enterprise", value: 6.87, color: "#2E6E9E", detail: "$6.87M enterprise fund" },
+  { name: "Harbor enterprise", value: 1.32, color: "#5A6577", detail: "$1.32M enterprise fund" },
+];
+const total = segments.reduce((s, d) => s + d.value, 0);
+
+const ctx = document.getElementById("budgetChart").getContext("2d");
+const chart = new Chart(ctx, {
+  type: "doughnut",
+  data: {
+    labels: segments.map(s => s.name),
+    datasets: [{
+      data: segments.map(s => s.value),
+      backgroundColor: segments.map(s => s.color),
+      borderColor: "#FDF9F4",
+      borderWidth: 2,
+      hoverOffset: 8,
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    cutout: "50%",
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        titleFont: { family: "Georgia, serif", size: 14, weight: "bold" },
+        bodyFont: { family: "Georgia, serif", size: 13 },
+        backgroundColor: "#FDF9F4",
+        titleColor: "#1E1F21",
+        bodyColor: "#4A4A4A",
+        borderColor: "#D0CCC5",
+        borderWidth: 1,
+        callbacks: {
+          label: (ctx) => {
+            const seg = segments[ctx.dataIndex];
+            return ` $${seg.value.toFixed(2)}M (${(seg.value / total * 100).toFixed(1)}%)`;
+          }
+        }
+      }
+    },
+    onHover: (evt, elements) => {
+      if (elements.length) showDetail(elements[0].index);
+    }
+  }
+});
+
+const legendEl = document.getElementById("legend");
+const detailEl = document.getElementById("detail");
+
+segments.forEach((seg, i) => {
+  const item = document.createElement("div");
+  item.className = "legend-item";
+  item.innerHTML = `<span class="swatch" style="background:${seg.color}"></span><span class="legend-label"><strong>${seg.name}</strong> <span class="pct">$${seg.value.toFixed(seg.value % 1 === 0 ? 1 : 2)}M (${(seg.value / total * 100).toFixed(1)}%)</span></span>`;
+  item.addEventListener("mouseenter", () => showDetail(i));
+  legendEl.appendChild(item);
+});
+
+function showDetail(i) {
+  detailEl.style.borderLeftColor = segments[i].color;
+  detailEl.textContent = segments[i].detail;
+}
+
+  })();
+  </script>
+
+  <script>
+  /* Voting record chart */
+  (function() {
+  
+const ctx = document.getElementById("overrideChart").getContext("2d");
+new Chart(ctx, {
+  type: "bar",
+  data: {
+    labels: ["Debt exclusions", "Operating overrides", "Capital exclusions"],
+    datasets: [
+      { label: "Passed", data: [68, 3, 5], backgroundColor: "#3D7A47", borderRadius: 2 },
+      { label: "Failed", data: [16, 18, 5], backgroundColor: "#C2261D", borderRadius: 2 }
+    ]
+  },
+  options: {
+    indexAxis: "y",
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      x: {
+        stacked: true,
+        max: 90,
+        ticks: { font: { family: "Georgia, serif", size: 13 }, color: "#4A4A4A" },
+        grid: { color: "#DDD8D0" },
+      },
+      y: {
+        stacked: true,
+        ticks: { font: { family: "Georgia, serif", size: 15, weight: "bold" }, color: "#1E1F21" },
+        grid: { display: false },
+      }
+    },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        titleFont: { family: "Georgia, serif", size: 14, weight: "bold" },
+        bodyFont: { family: "Georgia, serif", size: 13 },
+        backgroundColor: "#FDF9F4",
+        titleColor: "#1E1F21",
+        bodyColor: "#4A4A4A",
+        borderColor: "#D0CCC5",
+        borderWidth: 1,
+        callbacks: {
+          afterBody: (ctx) => {
+            const idx = ctx[0].dataIndex;
+            const rates = [81, 14, 50];
+            return `Pass rate: ${rates[idx]}%`;
+          }
+        }
+      }
+    }
+  }
+});
+
+  })();
+  </script>
+
+</body>
+</html>
