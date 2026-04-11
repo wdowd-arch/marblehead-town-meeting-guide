@@ -37,13 +37,6 @@
       text-transform: uppercase;
       margin-bottom: 4px;
     }
-    .masthead-guide {
-      display: block;
-      margin-top: 6px;
-      font-size: clamp(14px, 3vw, 19px);
-      letter-spacing: 1.6px;
-      line-height: 1.2;
-    }
     .masthead-emblem {
       display: block;
       width: clamp(84px, 12vw, 124px);
@@ -51,9 +44,11 @@
       filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.22));
     }
     .masthead-tagline {
-      font-size: 13px;
-      color: #9ca3af;
-      letter-spacing: 0.5px;
+      font-size: clamp(16px, 3.2vw, 24px);
+      color: #FDF9F4;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      line-height: 1.2;
     }
 
     /* === ARTICLE === */
@@ -649,9 +644,9 @@
 <body>
 
   <header class="masthead">
-    <div class="masthead-name">The Marblehead Independent<span class="masthead-guide">2026 Town Meeting Guide</span></div>
+    <div class="masthead-name">The Marblehead Independent</div>
     <img class="masthead-emblem" src="assets/town-meeting-emblem.png" alt="Illustration of Marblehead Town Hall">
-    <div class="masthead-tagline">Government &amp; community news</div>
+    <div class="masthead-tagline">2026 Town Meeting Guide</div>
   </header>
 
   <article class="article">
