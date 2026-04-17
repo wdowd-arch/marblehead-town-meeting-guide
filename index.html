@@ -290,6 +290,48 @@
     .embed-frame-capacity {
       min-height: 980px;
     }
+    @media (max-width: 900px) {
+      .embed-card {
+        width: min(100vw - 20px, 100%);
+      }
+    }
+    @media (max-width: 600px) {
+      .embed-card {
+        width: calc(100vw - 16px);
+        margin-top: 24px;
+        margin-bottom: 28px;
+        border-radius: 6px;
+      }
+      .embed-card-header {
+        padding: 14px 14px 8px;
+      }
+      .embed-card-header-compact {
+        padding-bottom: 12px;
+      }
+      .embed-card-header h3 {
+        font-size: clamp(17px, 5vw, 21px);
+        line-height: 1.2;
+      }
+      .embed-frame-scenarios {
+        min-height: 1320px;
+      }
+      .embed-frame-taxbills,
+      .embed-frame-capacity {
+        min-height: 760px;
+      }
+    }
+    @media (max-width: 900px) and (orientation: landscape) {
+      .embed-card {
+        width: calc(100vw - 24px);
+      }
+      .embed-frame-scenarios {
+        min-height: 980px;
+      }
+      .embed-frame-taxbills,
+      .embed-frame-capacity {
+        min-height: 640px;
+      }
+    }
 
     /* === WIDGET STYLES === */
 
