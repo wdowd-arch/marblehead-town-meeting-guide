@@ -245,17 +245,12 @@
       width: 100%; height: 100%;
       border: 0;
     }
-    .embed-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      margin: 28px 0 20px;
-    }
     .embed-card {
       background: #FDF9F4;
       border: 1px solid #D8D3CC;
       border-radius: 8px;
       overflow: hidden;
+      margin: 30px 0 34px;
     }
     .embed-card-header {
       padding: 18px 20px 8px;
@@ -279,6 +274,15 @@
       display: block;
       background: #FDF9F4;
       min-height: 720px;
+    }
+    .embed-frame-scenarios {
+      min-height: 1700px;
+    }
+    .embed-frame-taxbills {
+      min-height: 980px;
+    }
+    .embed-frame-capacity {
+      min-height: 980px;
     }
 
     /* === WIDGET STYLES === */
@@ -961,28 +965,12 @@
     <p><strong>Trash and curbside collection</strong><br>The budget introduces a $2,186,516 curbside collection line item &mdash; the cost of the Republic Services contract for weekly trash pickup, weekly recycling and eight weeks of leaf and grass removal. A separate $2,298,575 override question would fund curbside service through the tax levy instead. If voters reject it, the Board of Health would establish a fee-based system at roughly $262 per household.</p>
     <p>New barcoded 65-gallon trash bins and 95-gallon recycling bins will be distributed to all 8,000 households in June, financed at roughly $210,000 per year over five years. Republic will only collect material placed in barcoded containers. The contract includes a 5 percent annual escalator.</p>
     <p class="source-cite"><em>Sources: </em><a href="https://www.marbleheadindependent.com/marblehead-officials-map-out-possible-282-trash-fee-if-override-fails/" target="_blank"><em>Officials map out possible $262 trash fee</em></a> &middot; <a href="https://www.marbleheadindependent.com/marblehead-officials-map-out-possible-282-trash-fee-if-override-fails/" target="_blank"><em>Board of Health reviews trash fee scenario</em></a></p>
-    <div class="embed-stack">
-      <div class="embed-card">
-        <div class="embed-card-header">
-          <h3>Eight possible override outcomes</h3>
-          <p>This interactive breakdown brings the full scenario matrix directly into the guide, including service restorations, tax impact and levy capacity under each possible combination of override votes.</p>
-        </div>
-        <iframe class="embed-frame" src="assets/embeds/override-scenarios.html" title="Eight possible override outcomes" loading="lazy" onload="resizeEmbeddedFrame(this)"></iframe>
+    <div class="embed-card">
+      <div class="embed-card-header">
+        <h3>Eight possible override outcomes</h3>
+        <p>This interactive breakdown brings the full scenario matrix directly into the guide, including service restorations, tax impact and levy capacity under each possible combination of override votes.</p>
       </div>
-      <div class="embed-card">
-        <div class="embed-card-header">
-          <h3>Median home tax-bill impact</h3>
-          <p>This table shows how each override scenario changes the property-tax bill on the town's median single-family home over time, using the same assessed-value example cited in the town's override materials.</p>
-        </div>
-        <iframe class="embed-frame" src="assets/embeds/taxbills.html" title="Median home tax-bill impact" loading="lazy" onload="resizeEmbeddedFrame(this)"></iframe>
-      </div>
-      <div class="embed-card">
-        <div class="embed-card-header">
-          <h3>Levy-capacity outlook by scenario</h3>
-          <p>This matrix shows what each outcome would authorize in new levy capacity and how that capacity compounds over time under Proposition 2&frac12;.</p>
-        </div>
-        <iframe class="embed-frame" src="assets/embeds/levy-capacity.html" title="Levy-capacity outlook by scenario" loading="lazy" onload="resizeEmbeddedFrame(this)"></iframe>
-      </div>
+      <iframe class="embed-frame embed-frame-scenarios" src="assets/embeds/override-scenarios.html" title="Eight possible override outcomes" loading="lazy" onload="resizeEmbeddedFrame(this)"></iframe>
     </div>
     <p><strong>The zoning vote</strong><br>Article 4 creates a Multifamily Overlay District with two subdistricts: Broughton Road (maximum density of 19 units per acre) and Tedesco Country Club (maximum density of 25 units per acre). Maximum building height is 35 feet. Projects with more than six units must include 10 percent affordable housing. The Planning Board would serve as the plan approval authority. Requires a two-thirds supermajority.</p>
     <p>This is the fourth vote in three years. The attorney general filed suit in January but is holding off on further action pending the May town meeting vote. Noncompliance has cost Marblehead access to MassWorks grants, Housing Choice grants and other state funding totaling nearly $4 million. Council on Aging medical transport is also at risk.</p>
@@ -990,6 +978,13 @@
     <p>Article 39 seeks to repeal the Department of Planning and Community Development that Town Meeting created just two years ago &mdash; the same department whose director, Brendan Callahan, presented a budget that eliminates his own position. Article 37 would limit all non-union municipal employment contracts to one calendar year. Article 38 would restore one-year Select Board terms. Article 40 would affirm the town's commitment to the Declaration of Independence and the Constitution.</p>
     <p><strong>The June 9 election</strong><br>Town Meeting must first authorize any override by majority vote, and voters would then ratify it at the June 9 ballot box. That election will be one of the broadest in recent memory: 24 seats across 11 elected bodies, including two Select Board seats, two School Committee seats, library trustees and the Board of Health. Nomination papers are due April 21. Any override questions approved by Town Meeting would appear on this same ballot, meaning the candidates running for office and the override debate will be inextricable.</p>
     <p class="source-cite"><em>Sources: </em><a href="https://www.marbleheadindependent.com/a-big-ballot-for-marblehead-24-seats-open-in-june-town-election/" target="_blank"><em>24 seats open in June town election</em></a> &middot; <a href="https://www.marbleheadindependent.com/ferrante-pulls-for-select-board-as-marbleheads-24-seat-june-ballot-opens/" target="_blank"><em>Ferrante pulls for Select Board</em></a></p>
+    <div class="embed-card">
+      <div class="embed-card-header">
+        <h3>Median home tax-bill impact</h3>
+        <p>This table shows how each override scenario changes the property-tax bill on the town's median single-family home over time, using the same assessed-value example cited in the town's override materials.</p>
+      </div>
+      <iframe class="embed-frame embed-frame-taxbills" src="assets/embeds/taxbills.html" title="Median home tax-bill impact" loading="lazy" onload="resizeEmbeddedFrame(this)"></iframe>
+    </div>
     <!-- VOTING RECORD CHART -->
 <div class="chart-wrapper">
 <h2>How Marblehead votes: 114 ballot questions since 1982</h2>
@@ -1013,6 +1008,13 @@
 <div class="callout"><strong>The pattern:</strong> Marblehead funds things it can see and touch &mdash; debt exclusions pass 81% of the time. Operating overrides pass 14%. The Select Board's three-tier structure is a bet that defined, accountable tiers will be treated more like a debt exclusion.</div>
 <p class="source">Source: Marblehead Independent analysis of every Proposition 2&frac12; vote since 1982.</p>
 </div>
+    <div class="embed-card">
+      <div class="embed-card-header">
+        <h3>Levy-capacity outlook by scenario</h3>
+        <p>This matrix shows what each outcome would authorize in new levy capacity and how that capacity compounds over time under Proposition 2&frac12;.</p>
+      </div>
+      <iframe class="embed-frame embed-frame-capacity" src="assets/embeds/levy-capacity.html" title="Levy-capacity outlook by scenario" loading="lazy" onload="resizeEmbeddedFrame(this)"></iframe>
+    </div>
     <div class="section-header section-header-alt"><h2>MHTV coverage</h2><div class="header-rule"></div></div>
     <p>MHTV has offered some of the clearest public-facing coverage of Marblehead&rsquo;s Town Meeting season, documenting how the budget, warrant and override debate took shape over time. Its recent programming includes the <strong>April 8 Select Board meeting</strong>, where the override dollar spectrum debuted; the <strong>April 6 Finance Committee warrant hearing</strong>, where the Finance Committee weighed in on the financial articles; the <strong>March 28 Finance Committee budget hearings, Parts 1 and 2</strong>, which provided a granular look at nearly every corner of municipal government; the <strong>March 25 Select Board meeting</strong>, where board members chose override frameworks; and the <strong>Jan. 28 Select Board meeting</strong>, focused on the State of the Town. Taken together, that coverage gives residents a detailed view of how officials have framed the town&rsquo;s budget choices before Town Meeting.</p>
     <p>&mdash; April 8:&nbsp;<a href="https://marbleheadtv.org/episodes/marblehead-select-board-meeting-4-8-26/" target="_blank">Marblehead Select Board meeting</a> - Where the override range debuted.<br>&mdash; April 6:&nbsp;<a href="https://marbleheadtv.org/episodes/marblehead-finance-committee-warrant-hearing-4-6-26/" target="_blank">Marblehead Finance Committee warrant hearing</a> - Finance Committee discussion of the warrant's financial articles.<br>&mdash; March 28:&nbsp;<a href="https://marbleheadtv.org/episodes/marblehead-finance-committee-budget-hearing-part-2-3-28-26/" target="_blank">Marblehead Finance Committee budget hearing, part 2</a> - A granular look at town departments and budget lines.<br>&mdash; March 28:&nbsp;<a href="https://marbleheadtv.org/episodes/marblehead-finance-committee-budget-hearings-part-1-3-28-26/" target="_blank">Marblehead Finance Committee budget hearings, part 1</a> - A granular look at town departments and budget lines.<br>&mdash; March 25:&nbsp;<a href="https://marbleheadtv.org/episodes/marblehead-select-board-meeting-3-25-26/" target="_blank">Marblehead Select Board meeting</a> - Meeting where Select Board members narrowed the override options.<br>&mdash; Jan. 28:&nbsp;<a href="https://marbleheadtv.org/episodes/marblehead-select-board-meeting-1-28-26-state-of-the-town/" target="_blank">Marblehead Select Board meeting: State of the Town</a></p>
