@@ -245,6 +245,41 @@
       width: 100%; height: 100%;
       border: 0;
     }
+    .embed-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin: 28px 0 20px;
+    }
+    .embed-card {
+      background: #FDF9F4;
+      border: 1px solid #D8D3CC;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .embed-card-header {
+      padding: 18px 20px 8px;
+      border-top: 3px solid #1a1a2e;
+      background: linear-gradient(180deg, rgba(240,237,232,0.7), rgba(253,249,244,0));
+    }
+    .embed-card-header h3 {
+      margin: 0 0 6px;
+      font-size: clamp(18px, 4vw, 24px);
+      color: #1a1a2e;
+    }
+    .embed-card-header p {
+      margin: 0;
+      font-size: 14px;
+      color: #4A4A4A;
+      line-height: 1.6;
+    }
+    .embed-frame {
+      width: 100%;
+      border: 0;
+      display: block;
+      background: #FDF9F4;
+      min-height: 720px;
+    }
 
     /* === WIDGET STYLES === */
 
@@ -926,6 +961,29 @@
     <p><strong>Trash and curbside collection</strong><br>The budget introduces a $2,186,516 curbside collection line item &mdash; the cost of the Republic Services contract for weekly trash pickup, weekly recycling and eight weeks of leaf and grass removal. A separate $2,298,575 override question would fund curbside service through the tax levy instead. If voters reject it, the Board of Health would establish a fee-based system at roughly $262 per household.</p>
     <p>New barcoded 65-gallon trash bins and 95-gallon recycling bins will be distributed to all 8,000 households in June, financed at roughly $210,000 per year over five years. Republic will only collect material placed in barcoded containers. The contract includes a 5 percent annual escalator.</p>
     <p class="source-cite"><em>Sources: </em><a href="https://www.marbleheadindependent.com/marblehead-officials-map-out-possible-282-trash-fee-if-override-fails/" target="_blank"><em>Officials map out possible $262 trash fee</em></a> &middot; <a href="https://www.marbleheadindependent.com/marblehead-officials-map-out-possible-282-trash-fee-if-override-fails/" target="_blank"><em>Board of Health reviews trash fee scenario</em></a></p>
+    <div class="embed-stack">
+      <div class="embed-card">
+        <div class="embed-card-header">
+          <h3>Eight possible override outcomes</h3>
+          <p>This interactive breakdown brings the full scenario matrix directly into the guide, including service restorations, tax impact and levy capacity under each possible combination of override votes.</p>
+        </div>
+        <iframe class="embed-frame" src="assets/embeds/override-scenarios.html" title="Eight possible override outcomes" loading="lazy" onload="resizeEmbeddedFrame(this)"></iframe>
+      </div>
+      <div class="embed-card">
+        <div class="embed-card-header">
+          <h3>Median home tax-bill impact</h3>
+          <p>This table shows how each override scenario changes the property-tax bill on the town's median single-family home over time, using the same assessed-value example cited in the town's override materials.</p>
+        </div>
+        <iframe class="embed-frame" src="assets/embeds/taxbills.html" title="Median home tax-bill impact" loading="lazy" onload="resizeEmbeddedFrame(this)"></iframe>
+      </div>
+      <div class="embed-card">
+        <div class="embed-card-header">
+          <h3>Levy-capacity outlook by scenario</h3>
+          <p>This matrix shows what each outcome would authorize in new levy capacity and how that capacity compounds over time under Proposition 2&frac12;.</p>
+        </div>
+        <iframe class="embed-frame" src="assets/embeds/levy-capacity.html" title="Levy-capacity outlook by scenario" loading="lazy" onload="resizeEmbeddedFrame(this)"></iframe>
+      </div>
+    </div>
     <p><strong>The zoning vote</strong><br>Article 4 creates a Multifamily Overlay District with two subdistricts: Broughton Road (maximum density of 19 units per acre) and Tedesco Country Club (maximum density of 25 units per acre). Maximum building height is 35 feet. Projects with more than six units must include 10 percent affordable housing. The Planning Board would serve as the plan approval authority. Requires a two-thirds supermajority.</p>
     <p>This is the fourth vote in three years. The attorney general filed suit in January but is holding off on further action pending the May town meeting vote. Noncompliance has cost Marblehead access to MassWorks grants, Housing Choice grants and other state funding totaling nearly $4 million. Council on Aging medical transport is also at risk.</p>
     <p><strong>The governance questions</strong><br>There are four citizen petitions (Articles 37-40), alongside two competing articles on the Public Works Committee (Articles 34 and 35), testing how much structural change voters want. Article 34, sponsored by the Select Board, would dissolve the Public Works Committee entirely. Article 35, sponsored by the committee itself, would modernize its membership and duties. The political undertone is hard to miss: the Select Board-backed dissolution article comes after the committee revived itself and after nearly every department head who spoke publicly on April 9 argued for keeping some version of it. Only one can pass.</p>
@@ -1036,6 +1094,35 @@ function miTierTap(card) {
   }
 }
 
+  </script>
+
+  <script>
+  function resizeEmbeddedFrame(frame) {
+    try {
+      var doc = frame.contentWindow.document;
+      var height = Math.max(
+        doc.documentElement.scrollHeight,
+        doc.body ? doc.body.scrollHeight : 0
+      );
+      if (height) {
+        frame.style.height = height + 'px';
+      }
+    } catch (err) {
+      // Same-origin embeds should resize; ignore if not ready yet.
+    }
+  }
+
+  window.addEventListener('load', function() {
+    document.querySelectorAll('.embed-frame').forEach(function(frame) {
+      resizeEmbeddedFrame(frame);
+    });
+  });
+
+  window.addEventListener('resize', function() {
+    document.querySelectorAll('.embed-frame').forEach(function(frame) {
+      resizeEmbeddedFrame(frame);
+    });
+  });
   </script>
 
   <script>
