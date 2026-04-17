@@ -251,6 +251,9 @@
       border-radius: 8px;
       overflow: hidden;
       margin: 30px 0 34px;
+      width: min(100vw - 24px, 1040px);
+      margin-left: 50%;
+      transform: translateX(-50%);
     }
     .embed-card-header {
       padding: 18px 20px 8px;
@@ -267,6 +270,9 @@
       font-size: 14px;
       color: #4A4A4A;
       line-height: 1.6;
+    }
+    .embed-card-header-compact {
+      padding-bottom: 14px;
     }
     .embed-frame {
       width: 100%;
@@ -968,7 +974,6 @@
     <div class="embed-card">
       <div class="embed-card-header">
         <h3>Eight possible override outcomes</h3>
-        <p>This interactive breakdown brings the full scenario matrix directly into the guide, including service restorations, tax impact and levy capacity under each possible combination of override votes.</p>
       </div>
       <iframe class="embed-frame embed-frame-scenarios" src="assets/embeds/override-scenarios.html" title="Eight possible override outcomes" loading="lazy" onload="resizeEmbeddedFrame(this)"></iframe>
     </div>
@@ -979,9 +984,8 @@
     <p><strong>The June 9 election</strong><br>Town Meeting must first authorize any override by majority vote, and voters would then ratify it at the June 9 ballot box. That election will be one of the broadest in recent memory: 24 seats across 11 elected bodies, including two Select Board seats, two School Committee seats, library trustees and the Board of Health. Nomination papers are due April 21. Any override questions approved by Town Meeting would appear on this same ballot, meaning the candidates running for office and the override debate will be inextricable.</p>
     <p class="source-cite"><em>Sources: </em><a href="https://www.marbleheadindependent.com/a-big-ballot-for-marblehead-24-seats-open-in-june-town-election/" target="_blank"><em>24 seats open in June town election</em></a> &middot; <a href="https://www.marbleheadindependent.com/ferrante-pulls-for-select-board-as-marbleheads-24-seat-june-ballot-opens/" target="_blank"><em>Ferrante pulls for Select Board</em></a></p>
     <div class="embed-card">
-      <div class="embed-card-header">
+      <div class="embed-card-header embed-card-header-compact">
         <h3>Median home tax-bill impact</h3>
-        <p>This table shows how each override scenario changes the property-tax bill on the town's median single-family home over time, using the same assessed-value example cited in the town's override materials.</p>
       </div>
       <iframe class="embed-frame embed-frame-taxbills" src="assets/embeds/taxbills.html" title="Median home tax-bill impact" loading="lazy" onload="resizeEmbeddedFrame(this)"></iframe>
     </div>
@@ -1009,9 +1013,8 @@
 <p class="source">Source: Marblehead Independent analysis of every Proposition 2&frac12; vote since 1982.</p>
 </div>
     <div class="embed-card">
-      <div class="embed-card-header">
+      <div class="embed-card-header embed-card-header-compact">
         <h3>Levy-capacity outlook by scenario</h3>
-        <p>This matrix shows what each outcome would authorize in new levy capacity and how that capacity compounds over time under Proposition 2&frac12;.</p>
       </div>
       <iframe class="embed-frame embed-frame-capacity" src="assets/embeds/levy-capacity.html" title="Levy-capacity outlook by scenario" loading="lazy" onload="resizeEmbeddedFrame(this)"></iframe>
     </div>
